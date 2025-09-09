@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import profileImage from "../../assets/huzaifa-profile.jpg";
+import profileImage from "../../assets/reference-image.jpg";
 
 interface HeroSectionProps {
   onSectionClick: (section: string) => void;
