@@ -83,7 +83,7 @@ const ContactSection = () => {
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com",
+      url: "https://github.com/Huzafi?tab=repositories",
       color: "hover:text-[#333]",
     },
     {
