@@ -89,7 +89,7 @@ const ContactSection = () => {
     {
       name: "Upwork",
       icon: Globe,
-      url: "https://upwork.com",
+      url: "https://www.upwork.com/freelancers/~0133655d516c98fd12?viewMode=1",
       color: "hover:text-[#14A800]",
     },
     {
