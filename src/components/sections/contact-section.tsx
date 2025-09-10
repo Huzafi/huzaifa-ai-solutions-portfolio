@@ -31,7 +31,7 @@ const ContactSection = () => {
     try {
       // EmailJS configuration
       const serviceId = 'service_j2jxyq8';
-      const templateId = 'template_q6uol7be';
+      const templateId = 'template_q6uol7b';
       const publicKey = '0uJvpDGpBIh_2iODg';
 
       // Template parameters for EmailJS
