@@ -77,7 +77,7 @@ const ContactSection = () => {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/huzaifa-sheikh-b2a012342/",
       color: "hover:text-[#0077B5]",
     },
     {
