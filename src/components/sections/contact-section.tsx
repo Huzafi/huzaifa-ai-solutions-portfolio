@@ -95,7 +95,7 @@ const ContactSection = () => {
     {
       name: "Fiverr",
       icon: Globe,
-      url: "https://fiverr.com",
+      url: "https://www.fiverr.com/smartboyai?public_mode=true",
       color: "hover:text-[#1DBF73]",
     },
   ];
