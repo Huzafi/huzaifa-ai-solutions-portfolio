@@ -13,7 +13,6 @@ import {
   Send,
 } from "lucide-react";
 import { useToast } from "../../hooks/use-toast";
-import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -29,31 +28,31 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration
-      const serviceId = 'service_j2jxyq8';
-      const templateId = 'template_q6uol7b';
-      const publicKey = '0uJvpDGpBIh_2iODg';
-
-      // Template parameters for EmailJS
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'huzai567823@gmail.com',
-      };
-
-      // Send email via EmailJS
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+      const response = await fetch('https://formspree.io/f/xrbajoea', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
-      
-      // Reset form only on success
-      setFormData({ name: "", email: "", message: "" });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        
+        // Reset form only on success
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Form submission error:', error);
       toast({
         title: "Failed to send message",
         description: "There was an error sending your message. Please try again or contact me directly.",
