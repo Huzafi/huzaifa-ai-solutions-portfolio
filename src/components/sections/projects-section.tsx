@@ -30,7 +30,7 @@ const ProjectsSection = () => {
       image: "✍️",
       details: "Intelligent writing assistant that helps create, edit, and optimize content across various formats including blogs, emails, and marketing copy.",
       technologies: ["LangGraph", "OpenAI", "FastAPI", "React"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Huzafi/Expert_Writing_Agent",
       liveUrl: "#",
     },
     {
