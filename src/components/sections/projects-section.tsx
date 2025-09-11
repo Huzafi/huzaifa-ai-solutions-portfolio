@@ -50,7 +50,7 @@ const ProjectsSection = () => {
       image: "💬",
       details: "Intelligent chatbot solution for businesses to automate customer support, handle inquiries, and provide 24/7 assistance.",
       technologies: ["Node.js", "OpenAI", "WebSocket", "React"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Huzafi/AI_Chat_Assistant-Agent",
       liveUrl: "#",
     },
     {
