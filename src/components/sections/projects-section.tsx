@@ -40,7 +40,7 @@ const ProjectsSection = () => {
       image: "💻",
       details: "Smart coding assistant that provides code reviews, generates documentation, and helps with debugging and optimization tasks.",
       technologies: ["Python", "GitHub API", "OpenAI", "Chainlit"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Huzafi/Expert_Coding_Agent",
       liveUrl: "#",
     },
     {
