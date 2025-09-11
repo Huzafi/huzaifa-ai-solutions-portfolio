@@ -41,7 +41,7 @@ const ProjectsSection = () => {
       details: "Smart coding assistant that provides code reviews, generates documentation, and helps with debugging and optimization tasks.",
       technologies: ["Python", "GitHub API", "OpenAI", "Chainlit"],
       githubUrl: "https://github.com/Huzafi/Expert_Coding_Agent",
-      liveUrl: "#",
+      liveUrl: "https://expert-coding-agent.streamlit.app/",
     },
     {
       id: 4,
