@@ -51,7 +51,7 @@ const ProjectsSection = () => {
       details: "Intelligent chatbot solution for businesses to automate customer support, handle inquiries, and provide 24/7 assistance.",
       technologies: ["Node.js", "OpenAI", "WebSocket", "React"],
       githubUrl: "https://github.com/Huzafi/AI_Chat_Assistant-Agent",
-      liveUrl: "#",
+      liveUrl: "https://agentbot.streamlit.app/",
     },
     {
       id: 5,
