@@ -20,7 +20,7 @@ const ProjectsSection = () => {
       image: "🤖",
       details: "Advanced AI-powered resume analyzer that provides detailed feedback, keyword optimization, and formatting suggestions to help job seekers improve their resumes.",
       technologies: ["Python", "OpenAI API", "FastAPI", "Streamlit"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Huzafi/Ai_Resume_Analyzer",
       liveUrl: "#",
     },
     {
