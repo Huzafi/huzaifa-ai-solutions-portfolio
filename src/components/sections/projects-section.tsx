@@ -10,6 +10,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../ui/dialog";
+import whatsappAgentImage from "../../assets/whatsapp-ai-agent.jpg";
+import currencyConverterImage from "../../assets/currency-converter-agent.jpg";
 
 const ProjectsSection = () => {
   const projects = [
@@ -73,6 +75,26 @@ const ProjectsSection = () => {
       githubUrl: "#",
       liveUrl: "#",
     },
+    {
+      id: 7,
+      title: "WhatsApp AI Agent",
+      description: "Smart WhatsApp agent for automated messaging and workflows",
+      image: whatsappAgentImage,
+      details: "A smart WhatsApp agent that can reply to messages automatically, answer FAQs, and handle small workflows using OpenAI Agents SDK.",
+      technologies: ["Node.js", "Twilio WhatsApp API", "OpenAI Agents SDK"],
+      githubUrl: "https://github.com/Huzafi/Whatsapp_Agent",
+      liveUrl: "#",
+    },
+    {
+      id: 8,
+      title: "Currency Converter Agent",
+      description: "Real-time currency converter with live exchange rates",
+      image: currencyConverterImage,
+      details: "A real-time currency converter agent that fetches live exchange rates and performs fast conversions.",
+      technologies: ["Python", "FastAPI", "OpenAI API", "Free Currency API"],
+      githubUrl: "https://github.com/Huzafi/Currency_Converter_Agent",
+      liveUrl: "https://currency-converter-agent.streamlit.app/",
+    },
   ];
 
   const containerVariants = {
@@ -130,7 +152,17 @@ const ProjectsSection = () => {
               variants={itemVariants}
             >
               <div className="p-6">
-                <div className="text-4xl mb-4 text-center">{project.image}</div>
+                <div className="mb-4 h-16 flex items-center justify-center">
+                  {typeof project.image === "string" ? (
+                    <div className="text-4xl">{project.image}</div>
+                  ) : (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-16 h-16 object-cover rounded-lg"
+                    />
+                  )}
+                </div>
                 <h3 className="font-heading font-semibold text-xl text-foreground mb-2">
                   {project.title}
                 </h3>
