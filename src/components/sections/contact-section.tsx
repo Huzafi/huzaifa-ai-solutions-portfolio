@@ -11,6 +11,7 @@ import {
   Github,
   Globe,
   Send,
+  X,
 } from "lucide-react";
 import { useToast } from "../../hooks/use-toast";
 
@@ -84,6 +85,12 @@ const ContactSection = () => {
       icon: Github,
       url: "https://github.com/Huzafi?tab=repositories",
       color: "hover:text-[#333]",
+    },
+    {
+      name: "Twitter",
+      icon: X,
+      url: "https://x.com/huzaifa1a2",
+      color: "hover:text-[#1DA1F2]",
     },
     {
       name: "Upwork",
