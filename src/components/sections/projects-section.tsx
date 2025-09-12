@@ -61,7 +61,7 @@ const ProjectsSection = () => {
       details: "Automation tool for LinkedIn that helps with connection requests, messaging, and profile optimization while maintaining authenticity.",
       technologies: ["Python", "LinkedIn API", "Selenium", "FastAPI"],
       githubUrl: "https://github.com/Huzafi/n8n_Automation_Projects/tree/main/01-LinkedIn-Automation",
-      liveUrl: "#",
+      liveUrl: "https://drive.google.com/file/d/1i7Cbp57p2CKFkMOP4JV2BKEzoFxxLQsV/view",
     },
     {
       id: 6,
