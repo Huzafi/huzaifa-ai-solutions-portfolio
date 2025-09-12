@@ -56,9 +56,20 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <Button variant="hero" className="shadow-medium hover:shadow-strong">
-              <Download className="w-4 h-4 mr-2" />
-              Download Resume
+            <Button 
+              variant="hero" 
+              className="shadow-medium hover:shadow-strong"
+              asChild
+            >
+              <a 
+                href="https://drive.google.com/uc?export=download&id=1cEbGB5zrJi6Qp69iRYA2BB6OOCeghAha"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download Resume
+              </a>
             </Button>
           </motion.div>
 
