@@ -71,7 +71,7 @@ const ProjectsSection = () => {
       details: "AI-powered email assistant that categorizes emails, generates responses, and automates routine email tasks to boost productivity.",
       technologies: ["Python", "Gmail API", "OpenAI", "n8n"],
       githubUrl: "https://github.com/Huzafi/n8n_Automation_Projects/tree/main/03-Gmail-Agent",
-      liveUrl: "#",
+      liveUrl: "https://drive.google.com/file/d/1iEnx7u2yrzS0kyNhnZy2_pa_Pb2F46JW/view",
     },
     {
       id: 7,
