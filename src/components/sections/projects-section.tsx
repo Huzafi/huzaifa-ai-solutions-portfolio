@@ -60,7 +60,7 @@ const ProjectsSection = () => {
       image: "🔗",
       details: "Automation tool for LinkedIn that helps with connection requests, messaging, and profile optimization while maintaining authenticity.",
       technologies: ["Python", "LinkedIn API", "Selenium", "FastAPI"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Huzafi/n8n_Automation_Projects/tree/main/01-LinkedIn-Automation",
       liveUrl: "#",
     },
     {
