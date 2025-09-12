@@ -156,11 +156,17 @@ const ProjectsSection = () => {
                   {typeof project.image === "string" ? (
                     <div className="text-4xl">{project.image}</div>
                   ) : (
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-16 h-16 object-cover rounded-lg"
-                    />
+                    <div className="w-16 h-16 rounded-lg overflow-hidden shadow-sm bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.parentElement!.innerHTML = `<div class="text-2xl text-primary">${project.title.charAt(0)}</div>`;
+                        }}
+                      />
+                    </div>
                   )}
                 </div>
                 <h3 className="font-heading font-semibold text-xl text-foreground mb-2">
