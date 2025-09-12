@@ -70,7 +70,7 @@ const ProjectsSection = () => {
       image: "📧",
       details: "AI-powered email assistant that categorizes emails, generates responses, and automates routine email tasks to boost productivity.",
       technologies: ["Python", "Gmail API", "OpenAI", "n8n"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/Huzafi/n8n_Automation_Projects/tree/main/03-Gmail-Agent",
       liveUrl: "#",
     },
     {
