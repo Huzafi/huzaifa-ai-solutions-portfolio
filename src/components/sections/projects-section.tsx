@@ -10,8 +10,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../ui/dialog";
-import whatsappAgentImage from "../../assets/whatsapp-ai-agent.jpg";
-import currencyConverterImage from "../../assets/currency-converter-agent.jpg";
 
 const ProjectsSection = () => {
   const projects = [
@@ -79,7 +77,7 @@ const ProjectsSection = () => {
       id: 7,
       title: "WhatsApp AI Agent",
       description: "Smart WhatsApp agent for automated messaging and workflows",
-      image: 📱 ,
+      image: "📱",
       details: "A smart WhatsApp agent that can reply to messages automatically, answer FAQs, and handle small workflows using OpenAI Agents SDK.",
       technologies: ["Node.js", "Twilio WhatsApp API", "OpenAI Agents SDK"],
       githubUrl: "https://github.com/Huzafi/Whatsapp_Agent",
@@ -89,7 +87,7 @@ const ProjectsSection = () => {
       id: 8,
       title: "Currency Converter Agent",
       description: "Real-time currency converter with live exchange rates",
-      image: 💱,
+      image: "💱",
       details: "A real-time currency converter agent that fetches live exchange rates and performs fast conversions.",
       technologies: ["Python", "FastAPI", "OpenAI API", "Free Currency API"],
       githubUrl: "https://github.com/Huzafi/Currency_Converter_Agent",
