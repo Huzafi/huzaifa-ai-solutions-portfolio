@@ -81,7 +81,7 @@ const ProjectsSection = () => {
       details: "A smart WhatsApp agent that can reply to messages automatically, answer FAQs, and handle small workflows using OpenAI Agents SDK.",
       technologies: ["Node.js", "Twilio WhatsApp API", "OpenAI Agents SDK"],
       githubUrl: "https://github.com/Huzafi/Whatsapp_Agent",
-      liveUrl: "#",
+      liveUrl: "https://drive.google.com/file/d/1gav2vcxSw6oGqQVGC4t3vGqMuNLQfvav/view",
     },
     {
       id: 8,
