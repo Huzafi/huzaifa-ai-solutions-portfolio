@@ -1,14 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { ScrollArea } from "../ui/scroll-area";
 import { Card } from "../ui/card";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { useToast } from "../ui/use-toast";
-
-const GEMINI_API_KEY = "AIzaSyD_6MxKtCT6RWVMYAMjvyx0uIHcbd7ZypI";
 
 interface Message {
   id: string;
@@ -24,8 +21,8 @@ const ChatAssistant = () => {
       id: "1",
       text: "Hi! I'm Huzaifa's AI assistant. I can help you learn more about his skills, projects, and background. What would you like to know?",
       isUser: false,
-      timestamp: new Date()
-    }
+      timestamp: new Date(),
+    },
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -36,54 +33,6 @@ const ChatAssistant = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const portfolioContext = `
-    Huzaifa Sheikh - AI & Automation Developer Profile:
-
-    About: Professional AI & Automation Developer specializing in intelligent agents and workflow automation.
-
-    Skills: Python, JavaScript, TypeScript, React, Node.js, OpenAI API, LangChain, Hugging Face, TensorFlow, Zapier, Make.com, n8n, Docker, Vercel, PostgreSQL, MongoDB, Supabase, Git.
-
-    Services: AI Agent Development, Workflow Automation, API Integration, Data Analysis, AI Consultation & Training.
-
-    Projects: AI Resume Analyzer, WhatsApp AI Agent, Currency Converter Agent, Writer Agent, Coding Agent.
-
-    Contact: Available for freelance projects and consultations.
-  `;
-
-  const generateResponse = async (userMessage: string) => {
-    setIsLoading(true);
-    try {
-      const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-
-      const prompt = `You are Huzaifa Sheikh's AI assistant. Answer questions about Huzaifa based on this portfolio information: ${portfolioContext}. Keep responses short, friendly, and professional.\n\nUser question: ${userMessage}`;
-
-      const result = await model.generateContent(prompt);
-      const response = result?.response;
-
-      const aiResponseText = response?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ||
-        "Sorry, I couldn't generate a response.";
-
-      const aiMessage: Message = {
-        id: Date.now().toString(),
-        text: aiResponseText,
-        isUser: false,
-        timestamp: new Date()
-      };
-
-      setMessages(prev => [...prev, aiMessage]);
-    } catch (error) {
-      console.error("Gemini API Error:", error);
-      toast({
-        title: "Error",
-        description: "Couldn't contact AI. Please try again later.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
 
@@ -91,14 +40,41 @@ const ChatAssistant = () => {
       id: Date.now().toString(),
       text: inputValue,
       isUser: true,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
 
     setMessages(prev => [...prev, userMessage]);
     const messageText = inputValue;
     setInputValue("");
+    setIsLoading(true);
 
-    await generateResponse(messageText);
+    try {
+      // Backend route call
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: messageText }),
+      });
+      const data = await response.json();
+
+      const aiMessage: Message = {
+        id: Date.now().toString(),
+        text: data?.text || "Sorry, I couldn't generate a response.",
+        isUser: false,
+        timestamp: new Date(),
+      };
+
+      setMessages(prev => [...prev, aiMessage]);
+    } catch (error) {
+      console.error("API Error:", error);
+      toast({
+        title: "Error",
+        description: "Couldn't contact AI. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -140,7 +116,7 @@ const ChatAssistant = () => {
           {/* Messages */}
           <ScrollArea className="flex-1 p-4">
             <div className="space-y-4">
-              {messages.map((message) => (
+              {messages.map(message => (
                 <div key={message.id} className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}>
                   <div className={`flex gap-2 max-w-[80%] ${message.isUser ? "flex-row-reverse" : ""}`}>
                     <Avatar className="w-6 h-6 mt-1">
@@ -181,7 +157,7 @@ const ChatAssistant = () => {
             <div className="flex gap-2">
               <Input
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask about Huzaifa's skills, projects, or experience..."
                 disabled={isLoading}
