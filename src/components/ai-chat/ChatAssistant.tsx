@@ -77,23 +77,32 @@ const ChatAssistant = () => {
       User question: ${userMessage}`;
       
       const result = await model.generateContent(prompt);
-      const aiResponse = result.response.text();
+      const response = result.response;
+
+      let aiResponseText: string;
+      if (response.candidates && response.candidates.length > 0) {
+        aiResponseText = response.candidates[0].content.parts[0].text;
+      } else {
+        aiResponseText = "Sorry, I couldn't generate a response.";
+      }
       
       const aiMessage: Message = {
         id: Date.now().toString(),
-        text: aiResponse,
+        text: aiResponseText,
         isUser: false,
         timestamp: new Date()
       };
       
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
-      console.error("Error generating response:", error);
-      toast({
-        title: "Error",
-        description: "Failed to generate response. Please try again.",
-        variant: "destructive",
-      });
+      console.error("Gemini API Error:", error);
+      const errorMessage: Message = {
+        id: Date.now().toString(),
+        text: "An error occurred while contacting AI. Please try again later.",
+        isUser: false,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
