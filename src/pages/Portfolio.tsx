@@ -7,6 +7,7 @@ import ServicesSection from "../components/sections/services-section";
 import ProjectsSection from "../components/sections/projects-section";
 import ContactSection from "../components/sections/contact-section";
 import Footer from "../components/sections/footer";
+import ChatAssistant from "../components/ai-chat/ChatAssistant";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -51,6 +52,7 @@ const Portfolio = () => {
       <ProjectsSection />
       <ContactSection />
       <Footer onSectionClick={handleSectionClick} />
+      <ChatAssistant />
     </div>
   );
 };
