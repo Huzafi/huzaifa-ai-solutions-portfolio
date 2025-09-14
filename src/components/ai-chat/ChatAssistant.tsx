@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { ScrollArea } from "../ui/scroll-area";
 import { Card } from "../ui/card";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { useToast } from "../ui/use-toast";
+
+const GEMINI_API_KEY = "AIzaSyD_6MxKtCT6RWVMYAMjvyx0uIHcbd7ZypI";
 
 interface Message {
   id: string;
@@ -26,8 +29,6 @@ const ChatAssistant = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [apiKey, setApiKey] = useState(localStorage.getItem("openai_api_key") || "");
-  const [showApiKeyInput, setShowApiKeyInput] = useState(!localStorage.getItem("openai_api_key"));
   const { toast } = useToast();
 
   const portfolioContext = `
@@ -64,59 +65,19 @@ const ChatAssistant = () => {
     Focus Areas: Building AI solutions that solve real business problems and improve efficiency through intelligent automation.
   `;
 
-  const saveApiKey = (key: string) => {
-    localStorage.setItem("openai_api_key", key);
-    setApiKey(key);
-    setShowApiKeyInput(false);
-    toast({
-      title: "API Key Saved",
-      description: "Your OpenAI API key has been saved locally.",
-    });
-  };
-
   const generateResponse = async (userMessage: string) => {
-    if (!apiKey) {
-      setShowApiKeyInput(true);
-      toast({
-        title: "API Key Required",
-        description: "Please enter your OpenAI API key to use the chat assistant.",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsLoading(true);
     try {
-      const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages: [
-            {
-              role: "system",
-              content: `You are Huzaifa Sheikh's AI assistant. Answer questions about Huzaifa based on this portfolio information: ${portfolioContext}. 
-              Keep responses conversational, helpful, and focused on Huzaifa's professional background. If asked about something not in the context, politely redirect to available information about his skills, projects, or services.`
-            },
-            {
-              role: "user",
-              content: userMessage
-            }
-          ],
-          max_tokens: 300,
-          temperature: 0.7,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`API request failed: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const aiResponse = data.choices[0]?.message?.content || "I'm having trouble responding right now. Please try again.";
+      const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      
+      const prompt = `You are Huzaifa Sheikh's AI assistant. Answer questions about Huzaifa based on this portfolio information: ${portfolioContext}. 
+      Keep responses conversational, helpful, and focused on Huzaifa's professional background. If asked about something not in the context, politely redirect to available information about his skills, projects, or services.
+      
+      User question: ${userMessage}`;
+      
+      const result = await model.generateContent(prompt);
+      const aiResponse = result.response.text();
       
       const aiMessage: Message = {
         id: Date.now().toString(),
@@ -130,7 +91,7 @@ const ChatAssistant = () => {
       console.error("Error generating response:", error);
       toast({
         title: "Error",
-        description: "Failed to generate response. Please check your API key and try again.",
+        description: "Failed to generate response. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -196,30 +157,6 @@ const ChatAssistant = () => {
             </Button>
           </div>
 
-          {/* API Key Input */}
-          {showApiKeyInput && (
-            <div className="p-4 bg-muted/30 border-b border-border">
-              <p className="text-xs text-muted-foreground mb-2">
-                Enter your OpenAI API key to enable the chat assistant:
-              </p>
-              <div className="flex gap-2">
-                <Input
-                  type="password"
-                  placeholder="sk-..."
-                  value={apiKey}
-                  onChange={(e) => setApiKey(e.target.value)}
-                  className="text-xs"
-                />
-                <Button
-                  size="sm"
-                  onClick={() => saveApiKey(apiKey)}
-                  disabled={!apiKey.trim()}
-                >
-                  Save
-                </Button>
-              </div>
-            </div>
-          )}
 
           {/* Messages */}
           <ScrollArea className="flex-1 p-4">
@@ -276,12 +213,12 @@ const ChatAssistant = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask about Huzaifa's skills, projects, or experience..."
-                disabled={isLoading || showApiKeyInput}
+                disabled={isLoading}
                 className="text-sm"
               />
               <Button
                 onClick={handleSendMessage}
-                disabled={!inputValue.trim() || isLoading || showApiKeyInput}
+                disabled={!inputValue.trim() || isLoading}
                 size="icon"
                 className="shrink-0"
               >
