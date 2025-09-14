@@ -1,0 +1,52 @@
+import { useState, useEffect, useRef } from "react";
+import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { ScrollArea } from "../ui/scroll-area";
+import { Card } from "../ui/card";
+import { Avatar, AvatarFallback } from "../ui/avatar";
+import { useToast } from "../ui/use-toast";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
