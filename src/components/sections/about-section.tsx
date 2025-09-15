@@ -16,6 +16,12 @@ const AboutSection = () => {
       institution: "DJ Science College",
       status: "Ongoing",
     },
+    {
+      year: "2024",
+      title: "Agentic AI Engineer/Developer",
+      institution: "PIAIC",
+      status: "Ongoing",
+    },
   ];
 
   return (
