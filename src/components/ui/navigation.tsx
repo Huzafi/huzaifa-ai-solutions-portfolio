@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./button";
+import { ThemeToggle } from "./theme-toggle";
 
 interface NavigationProps {
   activeSection: string;
@@ -59,10 +60,12 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                 {item.label}
               </Button>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Button variant="ghost" size="icon">
               <svg
                 className="w-6 h-6"
