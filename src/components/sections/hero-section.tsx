@@ -23,7 +23,8 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
               <img
                 src={profileImage}
                 alt="Huzaifa Sheikh - AI & Automation Developer"
-                className="relative w-80 h-80 object-cover rounded-full shadow-strong border-4 border-primary/20"
+                className="relative w-80 h-80 object-cover object-center rounded-full shadow-strong border-4 border-primary/20"
+                style={{ objectPosition: "center 20%" }}
               />
             </div>
           </motion.div>
