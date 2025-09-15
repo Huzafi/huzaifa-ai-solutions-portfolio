@@ -5,13 +5,13 @@ import { GraduationCap, Download } from "lucide-react";
 const AboutSection = () => {
   const educationTimeline = [
     {
-      year: "2019",
+      year: "2023",
       title: "Matriculation",
       institution: "The Educators School",
       status: "Completed",
     },
     {
-      year: "2025",
+      year: "2024",
       title: "Intermediate in Computer Science",
       institution: "DJ Science College",
       status: "Ongoing",
