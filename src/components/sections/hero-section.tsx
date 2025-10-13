@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 import { Button } from "../ui/button";
 import profileImage from "../../assets/huzaifa-new-profile.jpg";
 
@@ -42,12 +43,26 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
+              <span className="text-foreground">Hello, I am </span>
               <span className="gradient-primary bg-clip-text text-transparent">
-                Huzaifa Sheikh
+                Huzaifa
               </span>
               <br />
-              <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground">
-                AI & Automation Developer
+              <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-primary">
+                <TypeAnimation
+                  sequence={[
+                    'Agentic AI Developer',
+                    1500,
+                    'Automations and Web Dev Expert',
+                    1500,
+                    'Building Smart AI Systems',
+                    1500,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                  cursor={true}
+                />
               </span>
             </motion.h1>
 
