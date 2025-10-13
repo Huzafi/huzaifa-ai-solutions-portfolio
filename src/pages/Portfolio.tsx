@@ -43,7 +43,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen gradient-page">
       <Navigation activeSection={activeSection} onSectionClick={handleSectionClick} />
       <HeroSection onSectionClick={handleSectionClick} />
       <AboutSection />
