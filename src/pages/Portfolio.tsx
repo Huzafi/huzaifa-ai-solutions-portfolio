@@ -43,7 +43,19 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-screen ai-animated-bg">
+    <div className="min-h-screen">
+      {/* Particle overlay */}
+      <div className="particle-overlay">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+      </div>
+      
       <Navigation activeSection={activeSection} onSectionClick={handleSectionClick} />
       <HeroSection onSectionClick={handleSectionClick} />
       <AboutSection />
