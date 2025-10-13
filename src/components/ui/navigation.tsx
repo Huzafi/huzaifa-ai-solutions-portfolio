@@ -46,7 +46,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             className="font-heading font-bold text-xl text-primary"
             whileHover={{ scale: 1.05 }}
           >
-            Huzaifa Sheikh
+            HS
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">

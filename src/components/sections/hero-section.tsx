@@ -43,9 +43,8 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="text-foreground">Hello, I am </span>
               <span className="gradient-primary bg-clip-text text-transparent">
-                Huzaifa
+                Huzaifa Sheikh
               </span>
               <br />
               <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-primary">
