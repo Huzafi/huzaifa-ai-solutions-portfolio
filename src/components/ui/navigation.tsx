@@ -43,7 +43,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <motion.div
-            className="font-heading font-bold text-xl text-primary"
+            className="font-heading font-bold text-xl text-white bg-[hsl(211,100%,50%)] rounded-lg px-[10px] py-[6px]"
             whileHover={{ scale: 1.05 }}
           >
             HS
