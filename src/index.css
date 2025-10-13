@@ -52,6 +52,11 @@
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(214 25% 98%) 100%);
     --gradient-page: linear-gradient(180deg, hsl(210 100% 98%) 0%, hsl(214 100% 96%) 100%);
     
+    /* AI Developer theme colors */
+    --ai-deep-blue: 210 65% 12%;
+    --ai-electric-blue: 211 100% 50%;
+    --ai-purple-glow: 261 51% 51%;
+    
     /* Shadows */
     --shadow-soft: 0 4px 20px -4px hsl(214 50% 50% / 0.1);
     --shadow-medium: 0 8px 30px -8px hsl(214 50% 50% / 0.15);
@@ -98,6 +103,11 @@
     --gradient-hero: linear-gradient(135deg, hsl(214 100% 55%) 0%, hsl(214 100% 65%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(210 20% 6%) 0%, hsl(210 20% 8%) 100%);
     --gradient-page: linear-gradient(180deg, hsl(210 20% 6%) 0%, hsl(210 20% 8%) 100%);
+    
+    /* AI Developer theme colors - same for dark mode */
+    --ai-deep-blue: 210 65% 12%;
+    --ai-electric-blue: 211 100% 50%;
+    --ai-purple-glow: 261 51% 51%;
     
     --shadow-soft: 0 4px 20px -4px hsl(214 50% 20% / 0.3);
     --shadow-medium: 0 8px 30px -8px hsl(214 50% 20% / 0.4);
@@ -161,5 +171,87 @@
   
   .transition-spring {
     transition: var(--transition-spring);
+  }
+
+  .ai-animated-bg {
+    position: relative;
+    background: hsl(var(--ai-deep-blue));
+    overflow: hidden;
+  }
+
+  .ai-animated-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--ai-deep-blue)) 0%,
+      hsl(var(--ai-electric-blue) / 0.15) 25%,
+      hsl(var(--ai-purple-glow) / 0.1) 50%,
+      hsl(var(--ai-electric-blue) / 0.15) 75%,
+      hsl(var(--ai-deep-blue)) 100%
+    );
+    animation: ai-gradient-shift 15s ease infinite;
+    z-index: 0;
+  }
+
+  .ai-animated-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at 20% 50%,
+      hsl(var(--ai-electric-blue) / 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      hsl(var(--ai-purple-glow) / 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 20%,
+      hsl(var(--ai-electric-blue) / 0.05) 0%,
+      transparent 50%
+    );
+    animation: ai-pulse 8s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  .ai-animated-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes ai-gradient-shift {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(5%, 5%) rotate(90deg);
+    }
+    50% {
+      transform: translate(0, 10%) rotate(180deg);
+    }
+    75% {
+      transform: translate(-5%, 5%) rotate(270deg);
+    }
+  }
+
+  @keyframes ai-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
   }
 }
