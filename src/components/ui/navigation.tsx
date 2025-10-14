@@ -33,16 +33,16 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-lg"
-          : "bg-background/95 backdrop-blur-sm shadow-md"
+          ? "bg-[#0a0a0a]/95 backdrop-blur-sm shadow-lg"
+          : "bg-[#0a0a0a]/95 backdrop-blur-sm shadow-md"
       }`}
-      initial={{ y: 0 }}
-      animate={{ y: 0 }}
+      initial={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo / Name */}
+          {/* Logo */}
           <motion.div
             className="font-heading font-bold text-xl text-white bg-[hsl(211,100%,50%)] rounded-lg px-[10px] py-[6px]"
             whileHover={{ scale: 1.05 }}
@@ -50,31 +50,37 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             HS
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Button
+            {navItems.map((item, index) => (
+              <motion.div
                 key={item.id}
-                variant={activeSection === item.id ? "default" : "ghost"}
-                onClick={() => onSectionClick(item.id)}
-                className={`transition-all duration-300 ${
-                  activeSection === item.id
-                    ? "text-blue-600 font-semibold"
-                    : "text-foreground hover:text-blue-500"
-                }`}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0 }}
               >
-                {item.label}
-              </Button>
+                <Button
+                  variant={activeSection === item.id ? "default" : "ghost"}
+                  onClick={() => onSectionClick(item.id)}
+                  className={`transition-all duration-300 ${
+                    activeSection === item.id
+                      ? "text-blue-400 font-semibold"
+                      : "text-white hover:text-blue-400"
+                  }`}
+                >
+                  {item.label}
+                </Button>
+              </motion.div>
             ))}
             <ThemeToggle />
           </div>
 
-          {/* Mobile menu (hamburger icon) */}
+          {/* Mobile Menu */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
             <Button variant="ghost" size="icon">
               <svg
-                className="w-6 h-6"
+                className="w-6 h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
