@@ -31,10 +31,10 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-soft"
-          : "bg-background/80 backdrop-blur-sm"
+          ? "bg-background/95 backdrop-blur-sm shadow-lg"
+          : "bg-background/95 backdrop-blur-sm shadow-md"
       }`}
       initial={{ y: 0 }}
       animate={{ y: 0 }}
@@ -42,6 +42,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+          {/* Logo / Name */}
           <motion.div
             className="font-heading font-bold text-xl text-white bg-[hsl(211,100%,50%)] rounded-lg px-[10px] py-[6px]"
             whileHover={{ scale: 1.05 }}
@@ -49,13 +50,18 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             HS
           </motion.div>
 
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Button
                 key={item.id}
                 variant={activeSection === item.id ? "default" : "ghost"}
                 onClick={() => onSectionClick(item.id)}
-                className="transition-all duration-300"
+                className={`transition-all duration-300 ${
+                  activeSection === item.id
+                    ? "text-blue-600 font-semibold"
+                    : "text-foreground hover:text-blue-500"
+                }`}
               >
                 {item.label}
               </Button>
@@ -63,7 +69,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             <ThemeToggle />
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu (hamburger icon) */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
             <Button variant="ghost" size="icon">
