@@ -78,31 +78,26 @@ const ContactSection = () => {
       name: "LinkedIn",
       icon: Linkedin,
       url: "https://www.linkedin.com/in/huzaifa-sheikh-b2a012342/",
-      color: "hover:text-[#0077B5]",
     },
     {
       name: "GitHub",
       icon: Github,
       url: "https://github.com/Huzafi?tab=repositories",
-      color: "hover:text-[#333]",
     },
     {
       name: "Twitter",
       icon: X,
       url: "https://x.com/huzaifa1a2",
-      color: "hover:text-[#1DA1F2]",
     },
     {
       name: "Upwork",
       icon: Globe,
       url: "https://www.upwork.com/freelancers/~0133655d516c98fd12?viewMode=1",
-      color: "hover:text-[#14A800]",
     },
     {
       name: "Fiverr",
       icon: Globe,
       url: "https://www.fiverr.com/smartboyai?public_mode=true",
-      color: "hover:text-[#1DBF73]",
     },
   ];
 
@@ -241,12 +236,12 @@ const ContactSection = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center space-x-3 p-3 rounded-lg border border-border hover:shadow-medium transition-all duration-300 ${link.color}`}
+                    className="flex items-center space-x-3 p-3 rounded-lg border border-border bg-background hover:bg-accent hover:shadow-medium transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <link.icon className="w-5 h-5" />
-                    <span className="font-medium">{link.name}</span>
+                    <link.icon className="w-5 h-5 text-foreground" />
+                    <span className="font-medium text-foreground">{link.name}</span>
                   </motion.a>
                 ))}
               </div>
