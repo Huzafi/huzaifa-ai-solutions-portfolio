@@ -3,51 +3,60 @@ import {
   Bot,
   Cpu,
   Code,
-  Zap,
-  Database,
   Cloud,
-  Workflow,
-  MessageSquare,
-  Settings,
-  Brain,
+  LucideIcon,
 } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
 
 const SkillsSection = () => {
-  const skillCategories = [
+  const skillCategories: {
+    title: string;
+    icon: LucideIcon;
+    color: string;
+    skills: { name: string; level: number }[];
+  }[] = [
     {
       title: "AI & Automation",
+      icon: Bot,
+      color: "bg-blue-500",
       skills: [
-        { name: "OpenAI Agents SDK", icon: Bot },
-        { name: "LangGraph", icon: Brain },
-        { name: "MCP", icon: Workflow },
-        { name: "n8n", icon: Settings },
+        { name: "OpenAI Agents SDK", level: 90 },
+        { name: "LangGraph", level: 85 },
+        { name: "MCP", level: 80 },
+        { name: "n8n", level: 88 },
       ],
     },
     {
       title: "Programming",
+      icon: Code,
+      color: "bg-green-500",
       skills: [
-        { name: "Python", icon: Code },
-        { name: "Node.js", icon: Cpu },
-        { name: "API Development", icon: Zap },
-        { name: "System Design", icon: Database },
+        { name: "Python", level: 95 },
+        { name: "Node.js", level: 88 },
+        { name: "API Development", level: 92 },
+        { name: "System Design", level: 85 },
       ],
     },
     {
       title: "Web Technologies",
+      icon: Cloud,
+      color: "bg-orange-500",
       skills: [
-        { name: "FastAPI", icon: Cloud },
-        { name: "Streamlit", icon: Code },
-        { name: "Chainlit", icon: MessageSquare },
-        { name: "Vercel/Render", icon: Cloud },
+        { name: "FastAPI", level: 90 },
+        { name: "Streamlit", level: 85 },
+        { name: "Chainlit", level: 82 },
+        { name: "Vercel/Render", level: 88 },
       ],
     },
     {
       title: "Integrations",
+      icon: Cpu,
+      color: "bg-purple-500",
       skills: [
-        { name: "Google Sheets API", icon: Database },
-        { name: "LinkedIn API", icon: MessageSquare },
-        { name: "Gmail API", icon: MessageSquare },
-        { name: "Gemini API", icon: Brain },
+        { name: "Google Sheets API", level: 90 },
+        { name: "LinkedIn API", level: 85 },
+        { name: "Gmail API", level: 88 },
+        { name: "Gemini API", level: 92 },
       ],
     },
   ];
@@ -74,7 +83,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="py-20 gradient-subtle">
+    <section id="skills" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -83,14 +92,14 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4">
             Skills & Expertise
           </h2>
-          <div className="w-20 h-1 gradient-hero mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -99,26 +108,33 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="space-y-4"
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
               variants={itemVariants}
             >
-              <h3 className="font-heading font-semibold text-lg text-primary text-center">
-                {category.title}
-              </h3>
-              <div className="space-y-3">
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`${category.color} p-2 rounded-lg`}>
+                  <category.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-heading font-semibold text-xl text-gray-900">
+                  {category.title}
+                </h3>
+              </div>
+              <div className="space-y-5">
                 {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    className="bg-card border border-border rounded-lg p-4 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105 group cursor-pointer"
-                    whileHover={{ y: -2 }}
-                  >
-                    <div className="flex items-center space-x-3">
-                      <skill.icon className="w-5 h-5 text-primary group-hover:text-primary-glow transition-colors duration-300" />
-                      <span className="text-sm font-medium text-foreground">
+                  <div key={skillIndex} className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-gray-700">
                         {skill.name}
                       </span>
+                      <span className="text-sm font-semibold text-gray-900">
+                        {skill.level}%
+                      </span>
                     </div>
-                  </motion.div>
+                    <Progress 
+                      value={skill.level} 
+                      className="h-2.5 bg-gray-200"
+                    />
+                  </div>
                 ))}
               </div>
             </motion.div>
