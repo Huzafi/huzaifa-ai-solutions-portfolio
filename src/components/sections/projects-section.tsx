@@ -188,7 +188,7 @@ const ProjectsSection = () => {
                 <div className="flex items-center justify-between">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline" size="sm">
+                      <Button variant="secondary" size="sm" className="text-foreground border-border hover:bg-accent hover:text-accent-foreground">
                         View Details
                       </Button>
                     </DialogTrigger>
@@ -234,12 +234,12 @@ const ProjectsSection = () => {
                   </Dialog>
 
                   <div className="flex space-x-2">
-                    <Button variant="ghost" size="icon" asChild>
+                    <Button variant="ghost" size="icon" className="text-foreground hover:text-primary hover:bg-accent" asChild>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4" />
                       </a>
                     </Button>
-                    <Button variant="ghost" size="icon" asChild>
+                    <Button variant="ghost" size="icon" className="text-foreground hover:text-primary hover:bg-accent" asChild>
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-4 h-4" />
                       </a>
