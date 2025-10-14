@@ -77,23 +77,23 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={{ duration: 0.5 }}
             >
               <Button
                 variant="hero"
                 size="lg"
                 onClick={() => onSectionClick("projects")}
-                className="shadow-medium hover:shadow-strong transition-all duration-300"
+                className="shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105"
               >
                 Explore My Work
               </Button>
               <Button
-                variant="outline"
+                variant="hero"
                 size="lg"
                 onClick={() => onSectionClick("contact")}
-                className="transition-all duration-300 hover:scale-105"
+                className="shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105"
               >
                 Contact Me
               </Button>
