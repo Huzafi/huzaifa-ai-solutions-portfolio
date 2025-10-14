@@ -89,16 +89,6 @@ const ContactSection = () => {
       icon: X,
       url: "https://x.com/huzaifa1a2",
     },
-    {
-      name: "Upwork",
-      icon: Globe,
-      url: "https://www.upwork.com/freelancers/~0133655d516c98fd12?viewMode=1",
-    },
-    {
-      name: "Fiverr",
-      icon: Globe,
-      url: "https://www.fiverr.com/smartboyai?public_mode=true",
-    },
   ];
 
   return (
@@ -229,7 +219,7 @@ const ContactSection = () => {
               <h3 className="font-heading font-semibold text-xl text-foreground mb-6">
                 Connect With Me
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
                     key={index}
