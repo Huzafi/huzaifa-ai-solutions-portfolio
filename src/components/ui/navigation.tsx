@@ -44,7 +44,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="font-heading font-bold text-xl text-primary bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text"
+            className="font-heading font-bold text-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text"
             whileHover={{ scale: 1.05 }}
           >
             HS
@@ -62,7 +62,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                 <Button
                   variant={activeSection === item.id ? "default" : "ghost"}
                   onClick={() => onSectionClick(item.id)}
-                  className="transition-all duration-300 text-gray-800 hover:text-primary"
+                  className="transition-all duration-300 text-gray-900 hover:text-primary font-medium"
                 >
                   {item.label}
                 </Button>
