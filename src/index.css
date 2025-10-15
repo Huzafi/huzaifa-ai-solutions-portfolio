@@ -393,3 +393,22 @@ header::after {
   background: none !important;
   border: none !important;
 }
+
+/* === Remove black top strip (navbar background) === */
+nav, header {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  position: relative;
+  z-index: 10;
+}
+
+nav * {
+  background: transparent !important;
+}
+
+header * {
+  background: transparent !important;
+}
+
