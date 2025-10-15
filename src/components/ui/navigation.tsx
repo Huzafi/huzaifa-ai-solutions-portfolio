@@ -31,8 +31,10 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-background/95 backdrop-blur-sm ${
-        isScrolled ? "shadow-lg" : "shadow-md"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-white/90 backdrop-blur-md shadow-md"
+          : "bg-white/80 backdrop-blur-sm"
       }`}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
@@ -42,7 +44,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="font-heading font-bold text-xl text-primary-foreground bg-primary rounded-lg px-[10px] py-[6px]"
+            className="font-heading font-bold text-xl text-primary bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text"
             whileHover={{ scale: 1.05 }}
           >
             HS
@@ -50,17 +52,17 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0 }}
+                transition={{ duration: 0.3 }}
               >
                 <Button
                   variant={activeSection === item.id ? "default" : "ghost"}
                   onClick={() => onSectionClick(item.id)}
-                  className="transition-all duration-300"
+                  className="transition-all duration-300 text-gray-800 hover:text-primary"
                 >
                   {item.label}
                 </Button>
