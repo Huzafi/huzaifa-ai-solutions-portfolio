@@ -121,16 +121,22 @@
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 
+  html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
   body {
     @apply text-foreground font-body;
     background: linear-gradient(135deg, #0a1930 0%, #1a2b4c 50%, #007bff 100%);
     background-attachment: fixed;
     color: white;
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  html {
-    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    border: none;
   }
 }
 
@@ -251,12 +257,23 @@
 }
 
 /* ✅ FIX: Remove the thin black strip above navbar */
-nav, header {
-  border-top: none !important;
-  box-shadow: none !important;
+#root {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
-nav::before, header::before {
+
+nav, header {
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+nav::before, header::before,
+nav::after, header::after {
   content: none !important;
   border: none !important;
   background: none !important;
+  display: none !important;
 }
