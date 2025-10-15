@@ -33,8 +33,8 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-md"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "bg-slate-950/80 backdrop-blur-xl border-b border-white/10"
+          : "bg-slate-950/60 backdrop-blur-lg"
       }`}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
@@ -44,14 +44,16 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="font-heading font-bold text-2xl bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text"
-            whileHover={{ scale: 1.05 }}
+            className="relative w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-xl text-white glow-blue cursor-pointer"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            HS
+            <span className="relative z-10">HS</span>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-50 blur-md" />
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               <motion.div
                 key={item.id}
@@ -60,9 +62,13 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                 transition={{ duration: 0.3 }}
               >
                 <Button
-                  variant={activeSection === item.id ? "default" : "ghost"}
+                  variant="ghost"
                   onClick={() => onSectionClick(item.id)}
-                  className="transition-all duration-300 text-gray-900 hover:text-primary font-medium"
+                  className={`transition-all duration-300 font-medium px-5 py-2 rounded-lg ${
+                    activeSection === item.id
+                      ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/50"
+                      : "text-slate-300 hover:text-white hover:bg-white/10"
+                  }`}
                 >
                   {item.label}
                 </Button>
@@ -74,7 +80,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
           {/* Mobile Menu */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="text-slate-300 hover:text-white hover:bg-white/10">
               <svg
                 className="w-6 h-6"
                 fill="none"
