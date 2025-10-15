@@ -33,8 +33,8 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-[#0a0a0a]/95 backdrop-blur-sm shadow-lg"
-          : "bg-[#0a0a0a]/95 backdrop-blur-sm shadow-md"
+          ? "backdrop-blur-sm"
+          : "backdrop-blur-sm"
       }`}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
