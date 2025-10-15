@@ -121,36 +121,59 @@
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 
-  html {
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-
   body {
     @apply text-foreground font-body;
     background: linear-gradient(135deg, #0a1930 0%, #1a2b4c 50%, #007bff 100%);
     background-attachment: fixed;
     color: white;
     transition: background-color 0.3s ease, color 0.3s ease;
-    margin: 0;
-    padding: 0;
-    border: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  .gradient-primary { background: var(--gradient-primary); }
-  .gradient-hero { background: var(--gradient-hero); }
-  .gradient-subtle { background: var(--gradient-subtle); }
-  .gradient-page { background: var(--gradient-page); }
-  .shadow-soft { box-shadow: var(--shadow-soft); }
-  .shadow-medium { box-shadow: var(--shadow-medium); }
-  .shadow-strong { box-shadow: var(--shadow-strong); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-  .transition-smooth { transition: var(--transition-smooth); }
-  .transition-spring { transition: var(--transition-spring); }
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .gradient-page {
+    background: var(--gradient-page);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
 
   .ai-animated-bg {
     position: relative;
@@ -209,15 +232,29 @@
   }
 
   @keyframes ai-gradient-shift {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(5%, 5%) rotate(90deg); }
-    50% { transform: translate(0, 10%) rotate(180deg); }
-    75% { transform: translate(-5%, 5%) rotate(270deg); }
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(5%, 5%) rotate(90deg);
+    }
+    50% {
+      transform: translate(0, 10%) rotate(180deg);
+    }
+    75% {
+      transform: translate(-5%, 5%) rotate(270deg);
+    }
   }
 
   @keyframes ai-pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.1); }
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+    }
   }
 
   /* Particle effect overlay */
@@ -240,77 +277,84 @@
     opacity: 0;
   }
 
-  .particle:nth-child(1) { width: 3px; height: 3px; left: 10%; animation-duration: 15s; animation-delay: 0s; }
-  .particle:nth-child(2) { width: 2px; height: 2px; left: 25%; animation-duration: 20s; animation-delay: 2s; }
-  .particle:nth-child(3) { width: 4px; height: 4px; left: 40%; animation-duration: 18s; animation-delay: 4s; }
-  .particle:nth-child(4) { width: 2px; height: 2px; left: 55%; animation-duration: 22s; animation-delay: 1s; }
-  .particle:nth-child(5) { width: 3px; height: 3px; left: 70%; animation-duration: 16s; animation-delay: 3s; }
-  .particle:nth-child(6) { width: 2px; height: 2px; left: 85%; animation-duration: 19s; animation-delay: 5s; }
-  .particle:nth-child(7) { width: 3px; height: 3px; left: 15%; animation-duration: 21s; animation-delay: 2.5s; }
-  .particle:nth-child(8) { width: 4px; height: 4px; left: 50%; animation-duration: 17s; animation-delay: 1.5s; }
+  .particle:nth-child(1) {
+    width: 3px;
+    height: 3px;
+    left: 10%;
+    animation-duration: 15s;
+    animation-delay: 0s;
+  }
+
+  .particle:nth-child(2) {
+    width: 2px;
+    height: 2px;
+    left: 25%;
+    animation-duration: 20s;
+    animation-delay: 2s;
+  }
+
+  .particle:nth-child(3) {
+    width: 4px;
+    height: 4px;
+    left: 40%;
+    animation-duration: 18s;
+    animation-delay: 4s;
+  }
+
+  .particle:nth-child(4) {
+    width: 2px;
+    height: 2px;
+    left: 55%;
+    animation-duration: 22s;
+    animation-delay: 1s;
+  }
+
+  .particle:nth-child(5) {
+    width: 3px;
+    height: 3px;
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 3s;
+  }
+
+  .particle:nth-child(6) {
+    width: 2px;
+    height: 2px;
+    left: 85%;
+    animation-duration: 19s;
+    animation-delay: 5s;
+  }
+
+  .particle:nth-child(7) {
+    width: 3px;
+    height: 3px;
+    left: 15%;
+    animation-duration: 21s;
+    animation-delay: 2.5s;
+  }
+
+  .particle:nth-child(8) {
+    width: 4px;
+    height: 4px;
+    left: 50%;
+    animation-duration: 17s;
+    animation-delay: 1.5s;
+  }
 
   @keyframes particle-float {
-    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-    10%, 90% { opacity: 0.6; }
-    100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
+    0% {
+      transform: translateY(100vh) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.6;
+    }
+    90% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-100px) translateX(50px);
+      opacity: 0;
+    }
   }
-}
-
-/* ✅ FIX: Remove the thin black strip above navbar */
-#root {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-nav, header {
-  border: none !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-nav::before, header::before,
-nav::after, header::after {
-  content: none !important;
-  border: none !important;
-  background: none !important;
-  display: none !important;
-}
-
-/* ✅ Final fix for unwanted black strip at the top */
-
-html,
-body,
-#root {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  background-color: transparent !important;
-}
-
-body {
-  background: linear-gradient(135deg, #0a1930 0%, #1a2b4c 50%, #007bff 100%) !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
-  background-position: center top !important;
-  overflow-x: hidden;
-}
-
-nav,
-header {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-nav::before,
-nav::after,
-header::before,
-header::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  border: none !important;
 }
