@@ -358,3 +358,38 @@
     }
   }
 }
+
+html,
+body,
+#root {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+body {
+  background: linear-gradient(135deg, #0a1930 0%, #1a2b4c 50%, #007bff 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  overflow-x: hidden;
+}
+
+nav,
+header {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+nav::before,
+nav::after,
+header::before,
+header::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: none !important;
+}
