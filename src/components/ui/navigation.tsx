@@ -31,10 +31,8 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "backdrop-blur-sm"
-          : "backdrop-blur-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-background/95 backdrop-blur-sm ${
+        isScrolled ? "shadow-lg" : "shadow-md"
       }`}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
@@ -44,7 +42,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="font-heading font-bold text-xl text-white bg-[hsl(211,100%,50%)] rounded-lg px-[10px] py-[6px]"
+            className="font-heading font-bold text-xl text-primary-foreground bg-primary rounded-lg px-[10px] py-[6px]"
             whileHover={{ scale: 1.05 }}
           >
             HS
@@ -62,11 +60,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                 <Button
                   variant={activeSection === item.id ? "default" : "ghost"}
                   onClick={() => onSectionClick(item.id)}
-                  className={`transition-all duration-300 ${
-                    activeSection === item.id
-                      ? "text-blue-400 font-semibold"
-                      : "text-white hover:text-blue-400"
-                  }`}
+                  className="transition-all duration-300"
                 >
                   {item.label}
                 </Button>
@@ -80,7 +74,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             <ThemeToggle />
             <Button variant="ghost" size="icon">
               <svg
-                className="w-6 h-6 text-white"
+                className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
