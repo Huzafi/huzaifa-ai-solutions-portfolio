@@ -135,45 +135,16 @@
 }
 
 @layer components {
-  .gradient-primary {
-    background: var(--gradient-primary);
-  }
-  
-  .gradient-hero {
-    background: var(--gradient-hero);
-  }
-  
-  .gradient-subtle {
-    background: var(--gradient-subtle);
-  }
-  
-  .gradient-page {
-    background: var(--gradient-page);
-  }
-  
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
-  }
-  
-  .shadow-medium {
-    box-shadow: var(--shadow-medium);
-  }
-  
-  .shadow-strong {
-    box-shadow: var(--shadow-strong);
-  }
-  
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-  
-  .transition-spring {
-    transition: var(--transition-spring);
-  }
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-hero { background: var(--gradient-hero); }
+  .gradient-subtle { background: var(--gradient-subtle); }
+  .gradient-page { background: var(--gradient-page); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-strong { box-shadow: var(--shadow-strong); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-smooth { transition: var(--transition-smooth); }
+  .transition-spring { transition: var(--transition-spring); }
 
   .ai-animated-bg {
     position: relative;
@@ -232,29 +203,15 @@
   }
 
   @keyframes ai-gradient-shift {
-    0%, 100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-      transform: translate(5%, 5%) rotate(90deg);
-    }
-    50% {
-      transform: translate(0, 10%) rotate(180deg);
-    }
-    75% {
-      transform: translate(-5%, 5%) rotate(270deg);
-    }
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5%, 5%) rotate(90deg); }
+    50% { transform: translate(0, 10%) rotate(180deg); }
+    75% { transform: translate(-5%, 5%) rotate(270deg); }
   }
 
   @keyframes ai-pulse {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.1);
-    }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
   }
 
   /* Particle effect overlay */
@@ -277,84 +234,29 @@
     opacity: 0;
   }
 
-  .particle:nth-child(1) {
-    width: 3px;
-    height: 3px;
-    left: 10%;
-    animation-duration: 15s;
-    animation-delay: 0s;
-  }
-
-  .particle:nth-child(2) {
-    width: 2px;
-    height: 2px;
-    left: 25%;
-    animation-duration: 20s;
-    animation-delay: 2s;
-  }
-
-  .particle:nth-child(3) {
-    width: 4px;
-    height: 4px;
-    left: 40%;
-    animation-duration: 18s;
-    animation-delay: 4s;
-  }
-
-  .particle:nth-child(4) {
-    width: 2px;
-    height: 2px;
-    left: 55%;
-    animation-duration: 22s;
-    animation-delay: 1s;
-  }
-
-  .particle:nth-child(5) {
-    width: 3px;
-    height: 3px;
-    left: 70%;
-    animation-duration: 16s;
-    animation-delay: 3s;
-  }
-
-  .particle:nth-child(6) {
-    width: 2px;
-    height: 2px;
-    left: 85%;
-    animation-duration: 19s;
-    animation-delay: 5s;
-  }
-
-  .particle:nth-child(7) {
-    width: 3px;
-    height: 3px;
-    left: 15%;
-    animation-duration: 21s;
-    animation-delay: 2.5s;
-  }
-
-  .particle:nth-child(8) {
-    width: 4px;
-    height: 4px;
-    left: 50%;
-    animation-duration: 17s;
-    animation-delay: 1.5s;
-  }
+  .particle:nth-child(1) { width: 3px; height: 3px; left: 10%; animation-duration: 15s; animation-delay: 0s; }
+  .particle:nth-child(2) { width: 2px; height: 2px; left: 25%; animation-duration: 20s; animation-delay: 2s; }
+  .particle:nth-child(3) { width: 4px; height: 4px; left: 40%; animation-duration: 18s; animation-delay: 4s; }
+  .particle:nth-child(4) { width: 2px; height: 2px; left: 55%; animation-duration: 22s; animation-delay: 1s; }
+  .particle:nth-child(5) { width: 3px; height: 3px; left: 70%; animation-duration: 16s; animation-delay: 3s; }
+  .particle:nth-child(6) { width: 2px; height: 2px; left: 85%; animation-duration: 19s; animation-delay: 5s; }
+  .particle:nth-child(7) { width: 3px; height: 3px; left: 15%; animation-duration: 21s; animation-delay: 2.5s; }
+  .particle:nth-child(8) { width: 4px; height: 4px; left: 50%; animation-duration: 17s; animation-delay: 1.5s; }
 
   @keyframes particle-float {
-    0% {
-      transform: translateY(100vh) translateX(0);
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.6;
-    }
-    90% {
-      opacity: 0.6;
-    }
-    100% {
-      transform: translateY(-100px) translateX(50px);
-      opacity: 0;
-    }
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10%, 90% { opacity: 0.6; }
+    100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
   }
+}
+
+/* ✅ FIX: Remove the thin black strip above navbar */
+nav, header {
+  border-top: none !important;
+  box-shadow: none !important;
+}
+nav::before, header::before {
+  content: none !important;
+  border: none !important;
+  background: none !important;
 }
