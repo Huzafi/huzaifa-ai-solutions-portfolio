@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Bot,
-  Cpu,
-  Code,
-  Cloud,
-  LucideIcon,
-} from "lucide-react";
+import { Bot, Cpu, Code, Cloud, LucideIcon } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 
 const SkillsSection = () => {
@@ -65,25 +59,20 @@ const SkillsSection = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <section
+      id="skills"
+      className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300"
+    >
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -108,7 +97,7 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-slate-700"
+              className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg dark:shadow-slate-900 hover:shadow-xl dark:hover:shadow-slate-900 transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-slate-700"
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-6">
@@ -130,9 +119,9 @@ const SkillsSection = () => {
                         {skill.level}%
                       </span>
                     </div>
-                    <Progress 
-                      value={skill.level} 
-                      className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300"
+                    <Progress
+                      value={skill.level}
+                      className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300 [&>div]:bg-blue-500 dark:[&>div]:bg-blue-400"
                     />
                   </div>
                 ))}
