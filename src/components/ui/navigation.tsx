@@ -74,15 +74,18 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                 </Button>
               </motion.div>
             ))}
-            {/* 🌓 Theme Toggle wrapped to avoid white patch */}
-            <div className="relative z-10 pointer-events-auto">
-              <ThemeToggle />
+
+            {/* 🌓 Theme Toggle fixed (no white patch, no click block) */}
+            <div className="relative z-10 pointer-events-none isolate">
+              <div className="pointer-events-auto">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
 
           {/* 📱 Mobile Menu */}
           <div className="md:hidden flex items-center space-x-2 relative z-20">
-            <div className="relative z-10 pointer-events-auto">
+            <div className="relative z-10 pointer-events-auto isolate">
               <ThemeToggle />
             </div>
             <Button
