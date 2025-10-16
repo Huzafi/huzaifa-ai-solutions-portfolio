@@ -54,7 +54,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-2 relative z-20">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               <motion.div
                 key={item.id}
@@ -75,19 +75,13 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
               </motion.div>
             ))}
 
-            {/* 🌓 Theme Toggle fixed (no white patch, no click block) */}
-            <div className="relative z-10 pointer-events-none isolate">
-              <div className="pointer-events-auto">
-                <ThemeToggle />
-              </div>
-            </div>
+            {/* 🌓 Theme Toggle */}
+            <ThemeToggle />
           </div>
 
           {/* 📱 Mobile Menu */}
-          <div className="md:hidden flex items-center space-x-2 relative z-20">
-            <div className="relative z-10 pointer-events-auto isolate">
-              <ThemeToggle />
-            </div>
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
