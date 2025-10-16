@@ -33,8 +33,8 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-slate-950/80 backdrop-blur-xl border-b border-white/10"
-          : "bg-slate-950/60 backdrop-blur-lg"
+          ? "bg-background/80 backdrop-blur-xl border-b border-border dark:bg-slate-950/80 dark:border-white/10"
+          : "bg-background/60 backdrop-blur-lg dark:bg-slate-950/60"
       }`}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="relative w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-xl text-white glow-blue cursor-pointer"
+            className="relative w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-xl text-white glow-blue cursor-pointer shadow-lg"
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -67,7 +67,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                   className={`transition-all duration-300 font-medium px-5 py-2 rounded-lg ${
                     activeSection === item.id
                       ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/50"
-                      : "text-slate-300 hover:text-white hover:bg-white/10"
+                      : "text-foreground hover:text-primary hover:bg-accent dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10"
                   }`}
                 >
                   {item.label}
@@ -80,7 +80,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
           {/* Mobile Menu */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
-            <Button variant="ghost" size="icon" className="text-slate-300 hover:text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="text-foreground hover:text-primary hover:bg-accent dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10">
               <svg
                 className="w-6 h-6"
                 fill="none"
