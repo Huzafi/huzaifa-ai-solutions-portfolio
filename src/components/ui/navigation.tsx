@@ -47,14 +47,14 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             className="relative w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl 
             text-blue-600 dark:text-white cursor-pointer shadow-lg shadow-blue-500/30"
             whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: 'spring', stiffness: 300 }}
           >
             <span className="relative z-10">HS</span>
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-50 blur-md" />
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-2 relative z-20">
             {navItems.map((item) => (
               <motion.div
                 key={item.id}
@@ -74,12 +74,17 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                 </Button>
               </motion.div>
             ))}
-            <ThemeToggle />
+            {/* 🌓 Theme Toggle wrapped to avoid white patch */}
+            <div className="relative z-10 pointer-events-auto">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* 📱 Mobile Menu */}
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
+          <div className="md:hidden flex items-center space-x-2 relative z-20">
+            <div className="relative z-10 pointer-events-auto">
+              <ThemeToggle />
+            </div>
             <Button
               variant="ghost"
               size="icon"
