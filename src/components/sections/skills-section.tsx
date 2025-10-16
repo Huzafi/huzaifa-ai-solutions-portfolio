@@ -121,7 +121,8 @@ const SkillsSection = () => {
                     </div>
                     <Progress
                       value={skill.level}
-                      className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300 [&>div]:bg-black"
+                      className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300"
+                      style={{ '--radix-progress-fill': 'black' } as React.CSSProperties}
                     />
                   </div>
                 ))}
