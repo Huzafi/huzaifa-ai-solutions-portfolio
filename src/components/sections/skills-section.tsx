@@ -121,7 +121,7 @@ const SkillsSection = () => {
                     </div>
                     <Progress
                       value={skill.level}
-                      className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300 [&>div]:bg-blue-500 dark:[&>div]:bg-blue-400"
+                      className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300 [&>div]:bg-black"
                     />
                   </div>
                 ))}
