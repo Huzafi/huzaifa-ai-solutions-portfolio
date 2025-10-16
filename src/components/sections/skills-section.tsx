@@ -83,7 +83,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -92,7 +92,7 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 transition-colors duration-300">
             Skills & Expertise
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
@@ -108,14 +108,14 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+              className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-slate-700"
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className={`${category.color} p-2 rounded-lg`}>
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-heading font-semibold text-xl text-gray-900">
+                <h3 className="font-heading font-semibold text-xl text-gray-900 dark:text-white transition-colors duration-300">
                   {category.title}
                 </h3>
               </div>
@@ -123,16 +123,16 @@ const SkillsSection = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700">
+                      <span className="text-sm font-medium text-gray-700 dark:text-slate-300 transition-colors duration-300">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-gray-900">
+                      <span className="text-sm font-semibold text-gray-900 dark:text-white transition-colors duration-300">
                         {skill.level}%
                       </span>
                     </div>
                     <Progress 
                       value={skill.level} 
-                      className="h-2.5 bg-gray-200"
+                      className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300"
                     />
                   </div>
                 ))}
