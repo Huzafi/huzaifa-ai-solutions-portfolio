@@ -24,7 +24,6 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -33,8 +32,8 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border dark:bg-slate-950/80 dark:border-white/10"
-          : "bg-background/60 backdrop-blur-lg dark:bg-slate-950/60"
+          ? "bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-gray-200 dark:border-white/10"
+          : "bg-white/60 dark:bg-slate-950/60 backdrop-blur-lg"
       }`}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
@@ -44,30 +43,25 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
-            className="relative w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-xl text-white glow-blue cursor-pointer shadow-lg"
+            className="relative w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl text-blue-600 dark:text-white cursor-pointer shadow-lg shadow-blue-500/20"
             whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: 'spring', stiffness: 300 }}
           >
             <span className="relative z-10">HS</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-50 blur-md" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-40 blur-md" />
           </motion.div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 1, y: 0 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
+              <motion.div key={item.id}>
                 <Button
                   variant="ghost"
                   onClick={() => onSectionClick(item.id)}
                   className={`transition-all duration-300 font-medium px-5 py-2 rounded-lg ${
                     activeSection === item.id
                       ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/50"
-                      : "text-foreground hover:text-primary hover:bg-accent dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10"
+                      : "text-gray-800 hover:text-blue-600 hover:bg-blue-50 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10"
                   }`}
                 >
                   {item.label}
@@ -80,7 +74,11 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
           {/* Mobile Menu */}
           <div className="md:hidden flex items-center space-x-2">
             <ThemeToggle />
-            <Button variant="ghost" size="icon" className="text-foreground hover:text-primary hover:bg-accent dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-gray-800 hover:text-blue-600 hover:bg-blue-50 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10"
+            >
               <svg
                 className="w-6 h-6"
                 fill="none"
