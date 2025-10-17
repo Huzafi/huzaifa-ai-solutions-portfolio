@@ -31,7 +31,7 @@ const ProjectsSection = () => {
       details: "Intelligent writing assistant that helps create, edit, and optimize content across various formats including blogs, emails, and marketing copy.",
       technologies: ["LangGraph", "OpenAI", "FastAPI", "React"],
       githubUrl: "https://github.com/Huzafi/Expert_Writing_Agent",
-      liveUrl: "https://writer-agent.streamlit.app/",
+      liveUrl: "https://expert-writing-agent.streamlit.app/",
     },
     {
       id: 3,
