@@ -71,7 +71,7 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300"
+      className="py-20 bg-white dark:bg-black transition-colors duration-300"
     >
       <div className="container mx-auto px-6">
         <motion.div
@@ -97,7 +97,7 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg dark:shadow-slate-900 hover:shadow-xl dark:hover:shadow-slate-900 transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-slate-700"
+              className="bg-white dark:bg-[#0a0a0a] rounded-xl p-6 shadow-lg dark:shadow-black hover:shadow-xl dark:hover:shadow-black transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-800"
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-6">
@@ -122,7 +122,9 @@ const SkillsSection = () => {
                     <Progress
                       value={skill.level}
                       className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300"
-                      style={{ '--radix-progress-fill': 'black' } as React.CSSProperties}
+                      style={{
+                        "--radix-progress-fill": "black",
+                      } as React.CSSProperties}
                     />
                   </div>
                 ))}
