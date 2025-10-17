@@ -84,7 +84,7 @@ const SkillsSection = () => {
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 transition-colors duration-300">
             Skills & Expertise
           </h2>
-          <div className="w-20 h-1 bg-black-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </motion.div>
 
         <motion.div
