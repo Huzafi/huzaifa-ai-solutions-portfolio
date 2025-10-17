@@ -94,7 +94,7 @@ const ProjectsSection = () => {
       liveUrl: "https://currency-converter-agent.streamlit.app/",
     },
     {
-      id: 8,
+      id: 9,
       title: "Youtube Transcript Agent",
       description:  "AI agent that extracts and summarizes YouTube videos without watching them",
       image: "▶️",
