@@ -109,7 +109,7 @@ const ProjectsSection = () => {
       description: "An AI-powered app that extracts, summarizes, and analyzes YouTube video transcripts in real-time.",
       image: "▶️",
       details: "A smart transcript agent that uses OpenAI API and FastAPI to fetch and process YouTube video transcripts with keyword extraction and summary generation.",
-      technologies: ["Python", "OpenAI API", "FastAPI", "Streamlit"],
+      technologies: ["Python", "Hugging Face embeddings", "Langchain", "Streamlit"],
       githubUrl: "https://github.com/Huzafi/Youtube_Transcript_Agent",
       liveUrl: "https://youtube-transcript-agent.vercel.app",
     },
