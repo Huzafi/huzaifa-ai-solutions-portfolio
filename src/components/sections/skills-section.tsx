@@ -37,8 +37,8 @@ const SkillsSection = () => {
       color: "bg-orange-500",
       skills: [
         { name: "FastAPI", level: 90 },
-        { name: "Streamlit", level: 85 },
-        { name: "Chainlit", level: 82 },
+        { name: "Streamlit/Chainlit", level: 85 },
+        { name: "Cloud", level: 82 },
         { name: "Vercel/Render", level: 88 },
       ],
     },
@@ -47,7 +47,7 @@ const SkillsSection = () => {
       icon: Cpu,
       color: "bg-purple-500",
       skills: [
-        { name: "Google Sheets API", level: 90 },
+        { name: "Github Agent API", level: 90 },
         { name: "LinkedIn API", level: 85 },
         { name: "Gmail API", level: 88 },
         { name: "Gemini API", level: 92 },
