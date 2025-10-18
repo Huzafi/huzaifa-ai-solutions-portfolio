@@ -85,6 +85,16 @@ const ProjectsSection = () => {
     },
     {
       id: 8,
+      title: "GitHub Agent",
+      description: "An AI-powered automation agent that manages GitHub repositories through chat commands.",
+      image: "🐱",
+      details: "A conversational agent built with the OpenAI Agents SDK and GitHub API that allows users to create, list, and delete repositories directly through chat. It eliminates manual steps by automating GitHub tasks seamlessly.",
+      technologies: ["Python", "OpenAI Agents SDK", "GitHub API", "FastAPI"],
+      githubUrl: "https://github.com/Huzafi/Github_Agent",
+      liveUrl: "https://github-agent.vercel.app",
+    },
+    {
+      id: 9,
       title: "Currency Converter Agent",
       description: "Real-time currency converter with live exchange rates",
       image: "💱",
@@ -94,7 +104,7 @@ const ProjectsSection = () => {
       liveUrl: "https://currency-converter-agent.streamlit.app/",
     },
     {
-      id: 9,
+      id: 10,
       title: "YouTube Transcript Agent",
       description: "An AI-powered app that extracts, summarizes, and analyzes YouTube video transcripts in real-time.",
       image: "▶️",
