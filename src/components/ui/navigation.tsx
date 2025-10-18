@@ -45,7 +45,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
           {/* 💠 Logo */}
           <motion.div
             className="relative w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl 
-            text-white bg-blue-600 cursor-pointer shadow-lg shadow-blue-500/30"
+            text-blue-600 dark:text-white cursor-pointer shadow-lg shadow-blue-500/30
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
