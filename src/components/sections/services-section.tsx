@@ -22,8 +22,8 @@ const ServicesSection = () => {
     },
     {
       icon: Server,
-      title: "Backend Development",
-      description: "FastAPI, Node.js, and scalable API development for robust applications",
+      title: "Full Stack Development",
+      description: "FastAPI, Node.js, UI Interface/Design and scalable API development for robust applications",
     },
     {
       icon: Lightbulb,
