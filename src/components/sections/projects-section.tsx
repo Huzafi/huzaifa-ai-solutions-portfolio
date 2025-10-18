@@ -95,13 +95,13 @@ const ProjectsSection = () => {
     },
     {
       id: 9,
-      title: "Youtube Transcript Agent",
-      description:  "AI agent that extracts and summarizes YouTube videos without watching them",
+      title: "YouTube Transcript Agent",
+      description: "An AI-powered app that extracts, summarizes, and analyzes YouTube video transcripts in real-time.",
       image: "▶️",
-      details: "An intelligent AI-powered agent that fetches YouTube video transcripts, generates detailed summaries, and allows users to chat directly with the content — no need to watch the full video. Built for efficient content understanding and quick insights.",
-      technologies: ["Python","Langchain", "Hugging face embedding"],
+      details: "A smart transcript agent that uses OpenAI API and FastAPI to fetch and process YouTube video transcripts with keyword extraction and summary generation.",
+      technologies: ["Python", "OpenAI API", "FastAPI", "Streamlit"],
       githubUrl: "https://github.com/Huzafi/Youtube_Transcript_Agent",
-      liveUrl: "https://youtube-transcript-agent.streamlit.app/",
+      liveUrl: "https://youtube-transcript-agent.vercel.app",
     },
   ];
 
