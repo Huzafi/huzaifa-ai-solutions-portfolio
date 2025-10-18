@@ -43,40 +43,49 @@ const AboutSection = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Bio Section */}
           <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-500"
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="space-y-4 text-muted-foreground">
-              <p className="text-lg leading-relaxed">
-                I'm Huzaifa Sheikh, a passionate developer specializing in AI and
-                automation. I love building intelligent agents and workflow
-                automations that make processes smarter and more efficient.
-              </p>
-              <p className="text-lg leading-relaxed">
-                I'm constantly exploring new AI technologies to create innovative
-                solutions that solve real-world problems and enhance productivity
-                for businesses and individuals.
-              </p>
-            </div>
-
-            <Button 
-              variant="hero" 
-              className="shadow-medium hover:shadow-strong"
-              asChild
+            <motion.div 
+              className="space-y-4 text-muted-foreground"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <a 
-                href="https://drive.google.com/uc?export=download&id=1cEbGB5zrJi6Qp69iRYA2BB6OOCeghAha"
-                target="_blank"
-                rel="noopener noreferrer"
-                download
+              <p className="text-lg leading-relaxed">
+                Hi, I'm Huzaifa Sheikh! I'm a passionate developer with a love for AI and automation. I specialize in building intelligent agents and smart workflow automations that make processes faster, smarter, and more efficient.
+              </p>
+              <p className="text-lg leading-relaxed">
+                I thrive on exploring the latest AI technologies to craft innovative solutions that tackle real-world challenges, helping businesses and individuals boost productivity. When I'm not coding, you'll probably find me experimenting with new AI tools, brainstorming ideas for my next project, or just geeking out over cool tech innovations.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Button 
+                variant="hero" 
+                className="mt-6 shadow-medium hover:shadow-strong"
+                asChild
               >
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
-              </a>
-            </Button>
+                <a 
+                  href="https://drive.google.com/uc?export=download&id=1cEbGB5zrJi6Qp69iRYA2BB6OOCeghAha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download Resume
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
 
           {/* Education Timeline */}
