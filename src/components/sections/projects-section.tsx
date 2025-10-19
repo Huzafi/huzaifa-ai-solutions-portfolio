@@ -91,7 +91,7 @@ const ProjectsSection = () => {
       details: "A conversational agent built with the OpenAI Agents SDK and GitHub API that allows users to create, list, and delete repositories directly through chat. It eliminates manual steps by automating GitHub tasks seamlessly.",
       technologies: ["Python", "OpenAI Agents SDK", "GitHub API", "FastAPI"],
       githubUrl: "https://github.com/Huzafi/Github_Agent",
-      liveUrl: "https://github-agent.vercel.app",
+      liveUrl: "https://drive.google.com/file/d/1yZfa4-5nrKcs1ANdk2ymxAChL75a5vzR/view",
     },
     {
       id: 9,
