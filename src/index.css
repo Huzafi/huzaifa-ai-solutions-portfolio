@@ -386,7 +386,7 @@ body,
 body {
   background: 
     linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%),
-    url('/src/assets/ai-portfolio-background.jpg') !important;
+    url('public/ai-portfolio-background (1).jpg') !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
