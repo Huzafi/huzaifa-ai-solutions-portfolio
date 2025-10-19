@@ -135,7 +135,7 @@
     @apply text-foreground font-body;
     background: 
       linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%),
-      url('public/ai-portfolio-background (1).jpg');
+      url('public/ai-portfolio-background.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -386,7 +386,7 @@ body,
 body {
   background: 
     linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%),
-    url('public/ai-portfolio-background (1).jpg') !important;
+    url('public/ai-portfolio-background.jpg') !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
