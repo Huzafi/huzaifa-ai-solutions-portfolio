@@ -89,6 +89,11 @@ const ContactSection = () => {
       icon: X,
       url: "https://x.com/huzaifa1a2",
     },
+    {
+      name: "Direct Email",
+      icon: Mail,
+      url: "mailto:huzai567823@gmail.com",
+    },
   ];
 
   return (
@@ -205,7 +210,9 @@ const ContactSection = () => {
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
                   <a
-                    href="tel:+923482515273"
+                    href="https://wa.me/923482515273"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"
                   >
                     +92 348 2515273
@@ -227,7 +234,7 @@ const ContactSection = () => {
               <h3 className="font-heading font-semibold text-xl text-foreground mb-6">
                 Connect With Me
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
                     key={index}
