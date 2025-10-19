@@ -135,7 +135,7 @@ body {
   @apply text-foreground font-body;
   min-height: 100vh;
   background: 
-    linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.85) 100%),
     url('/ai-portfolio-background.jpg');
   background-attachment: fixed;
   background-size: cover;
