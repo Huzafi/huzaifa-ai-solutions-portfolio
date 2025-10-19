@@ -131,18 +131,20 @@
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 
-  body {
-    @apply text-foreground font-body;
-    background: 
-      linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%),
-      url('public/ai-portfolio-background.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+body {
+  @apply text-foreground font-body;
+  min-height: 100vh;
+  background: 
+    linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%),
+    url('/ai-portfolio-background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 
   html {
     scroll-behavior: smooth;
@@ -386,7 +388,7 @@ body,
 body {
   background: 
     linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%),
-    url('public/ai-portfolio-background.jpg') !important;
+    url('/ai-portfolio-background.jpg') !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
