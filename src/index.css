@@ -126,7 +126,7 @@
   }
 }
 
-@layer base {
+/* @layer base {
   * {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
@@ -143,7 +143,7 @@ body {
   background-repeat: no-repeat;
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
+} */
 
 
   html {
@@ -386,6 +386,8 @@ body,
 }
 
 body {
+  min-height: 100vh;
+  color: white;
   background: 
     linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.8) 100%),
     url('/ai-portfolio-background.jpg') !important;
@@ -395,6 +397,7 @@ body {
   background-position: center !important;
   overflow-x: hidden;
 }
+
 
 nav,
 header {
