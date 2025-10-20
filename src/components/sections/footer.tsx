@@ -13,7 +13,7 @@ const Footer = ({ onSectionClick }: FooterProps) => {
   ];
 
   return (
-    <footer className="relative bg-card/50 backdrop-blur-sm border-t border-border/50 py-12">
+    <footer className="relative bg-transparent border-t border-border/50 py-12 shadow-[0_-4px_30px_rgba(0,0,0,0.3)]">
       <div className="container mx-auto px-6">
         <motion.div
           className="flex flex-col items-center space-y-8"
