@@ -385,18 +385,19 @@ body,
   background-color: transparent !important;
 }
 
-body {
-  min-height: 100vh;
-  color: white;
+/* === Ensure full-page image visibility === */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background: 
     linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.85) 100%),
-    url('/ai-portfolio-background.jpg');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
+    url('/ai-portfolio-background.jpg') center top / cover no-repeat;
   background-attachment: fixed;
-  overflow-x: hidden;
+  pointer-events: none;
 }
+
 
 nav,
 header {
