@@ -389,16 +389,14 @@ body {
   min-height: 100vh;
   color: white;
   background: 
-    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.8) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.85) 100%),
     url('/ai-portfolio-background.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-x: hidden;
 }
-
-
 
 nav,
 header {
@@ -436,3 +434,6 @@ header * {
   background: transparent !important;
 }
 
+#root, main, section, div {
+  background: transparent !important;
+}
