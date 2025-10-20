@@ -40,3 +40,22 @@
 .read-the-docs {
   color: #888;
 }
+
+/* === Force remove white overlay from all layout sections === */
+main, section, div {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+body {
+  min-height: 100vh;
+  background: 
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.85) 100%),
+    url('/ai-portfolio-background.jpg') center / cover no-repeat fixed !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  color: white;
+  overflow-x: hidden;
+}
