@@ -51,7 +51,7 @@ const ProjectsSection = () => {
       details: "A smart transcript agent that uses OpenAI API and FastAPI to fetch and process YouTube video transcripts with keyword extraction and summary generation.",
       technologies: ["Python", "Hugging Face embeddings", "Langchain", "Streamlit"],
       githubUrl: "https://github.com/Huzafi/Youtube_Transcript_Agent",
-      liveUrl: "https://youtube-transcript-agent.streamlit.app/",
+      liveUrl: "https://youtube-transcript-agent.streamlit.app",
     },
     {
       id: 5,
