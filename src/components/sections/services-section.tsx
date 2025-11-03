@@ -99,7 +99,7 @@ const ServicesSection = () => {
             >
               <div className="mb-4">
                 <div className="w-12 h-12 rounded-lg gradient-hero flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 text-white" />
+                  <service.icon className="w-6 h-6 text-white icon-glow" />
                 </div>
                 <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
                   {service.title}
