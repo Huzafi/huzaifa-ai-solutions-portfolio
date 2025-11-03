@@ -9,16 +9,17 @@ const Progress = React.forwardRef<
     fromColor?: string
     toColor?: string
   }
->(({ className, value, fromColor = "from-blue-500", toColor = "to-blue-600", ...props }, ref) => (
+>(({ className, value, fromColor = "from-cyan-400", toColor = "to-blue-500", ...props }, ref) => (
   <ProgressPrimitive.Root
     ref={ref}
-    className={cn("relative h-4 w-full overflow-hidden rounded-full bg-gray-200", className)}
+    className={cn("relative h-4 w-full overflow-hidden rounded-full", className)}
     {...props}
   >
     <ProgressPrimitive.Indicator
       className={cn(
-        "h-full w-full flex-1 transition-all duration-500 ease-out rounded-full",
-        `bg-gradient-to-r ${fromColor} ${toColor}`
+        "h-full w-full flex-1 transition-all duration-1000 ease-out rounded-full shadow-lg",
+        `bg-gradient-to-r ${fromColor} ${toColor}`,
+        "shadow-cyan-500/50"
       )}
       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
     />

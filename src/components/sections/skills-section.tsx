@@ -112,19 +112,18 @@ const SkillsSection = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700 dark:text-slate-300 transition-colors duration-300">
+                      <span className="text-sm font-medium text-slate-200">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-gray-900 dark:text-white transition-colors duration-300">
+                      <span className="text-sm font-semibold text-white">
                         {skill.level}%
                       </span>
                     </div>
                     <Progress
                       value={skill.level}
-                      className="h-2.5 bg-gray-200 dark:bg-slate-700 transition-colors duration-300"
-                      style={{
-                        "--radix-progress-fill": "black",
-                      } as React.CSSProperties}
+                      className="h-2.5 bg-white/5 backdrop-blur-sm"
+                      fromColor="from-cyan-400"
+                      toColor="to-blue-500"
                     />
                   </div>
                 ))}
