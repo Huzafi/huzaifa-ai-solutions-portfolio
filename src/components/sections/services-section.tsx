@@ -46,9 +46,7 @@ const ServicesSection = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -57,14 +55,12 @@ const ServicesSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-      },
+      transition: { duration: 0.6 },
     },
   };
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-20 bg-background services-section">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -98,9 +94,11 @@ const ServicesSection = () => {
               whileHover={{ scale: 1.02 }}
             >
               <div className="mb-4">
+                {/* 🔥 Blue glow icon */}
                 <div className="w-12 h-12 rounded-lg gradient-hero flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 text-white icon-glow" />
+                  <service.icon className="w-6 h-6 text-[#00bfff] icon-glow transition-all duration-300" />
                 </div>
+
                 <h3 className="font-heading font-semibold text-xl text-foreground mb-3">
                   {service.title}
                 </h3>
