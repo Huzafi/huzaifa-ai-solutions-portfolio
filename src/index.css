@@ -124,6 +124,10 @@
     --shadow-strong: 0 16px 40px -12px hsl(214 50% 20% / 0.5);
     --shadow-glow: 0 0 30px hsl(214 100% 65% / 0.4);
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* @layer base {
@@ -144,12 +148,6 @@ body {
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
 } */
-
-
-  html {
-    scroll-behavior: smooth;
-  }
-}
 
 @layer components {
   .gradient-primary {
