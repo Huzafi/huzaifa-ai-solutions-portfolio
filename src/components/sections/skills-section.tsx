@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Bot, Cpu, Code, Cloud, LucideIcon } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
 
 const SkillsSection = () => {
   const skillCategories: {
@@ -108,23 +107,26 @@ const SkillsSection = () => {
                   {category.title}
                 </h3>
               </div>
+
               <div className="space-y-5">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-slate-200">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-white">
+                      <span className="text-sm font-semibold text-blue-500 dark:text-blue-400">
                         {skill.level}%
                       </span>
                     </div>
-                    <Progress
-                      value={skill.level}
-                      className="h-2.5 bg-white/5 backdrop-blur-sm"
-                      fromColor="from-cyan-400"
-                      toColor="to-blue-500"
-                    />
+
+                    {/* ✅ Visible neon blue progress bar */}
+                    <div className="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
+                      <div
+                        className="absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_8px_rgba(0,191,255,0.7)] transition-all duration-700 ease-out"
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
                   </div>
                 ))}
               </div>
