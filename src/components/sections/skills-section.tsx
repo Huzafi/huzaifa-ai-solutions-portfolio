@@ -110,12 +110,12 @@ const SkillsSection = () => {
 
               <div className="space-y-5">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
+                  <div key={skillIndex} className="space-y-2 group cursor-pointer">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[#00d8ff] transition-colors duration-300">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-blue-500 dark:text-blue-400">
+                      <span className="text-sm font-semibold text-blue-500 dark:text-blue-400 group-hover:text-[#00d8ff] transition-colors duration-300">
                         {skill.level}%
                       </span>
                     </div>
@@ -126,9 +126,19 @@ const SkillsSection = () => {
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="h-full rounded-full bg-gradient-to-r from-[#00d8ff] to-[#0077ff]"
+                        className="h-full rounded-full bg-gradient-to-r from-[#00d8ff] to-[#0077ff] group-hover:animate-pulse transition-all duration-300"
                         style={{
                           boxShadow: "0 0 10px rgba(0, 216, 255, 0.6), 0 0 20px rgba(0, 119, 255, 0.4), 0 0 30px rgba(0, 216, 255, 0.2)"
+                        }}
+                      />
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="absolute top-0 left-0 h-full rounded-full bg-gradient-to-r from-[#00d8ff] to-[#0077ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style={{
+                          boxShadow: "0 0 20px rgba(0, 216, 255, 0.9), 0 0 40px rgba(0, 119, 255, 0.7), 0 0 60px rgba(0, 216, 255, 0.5)"
                         }}
                       />
                     </div>
