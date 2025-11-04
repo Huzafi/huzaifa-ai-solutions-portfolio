@@ -120,25 +120,15 @@ const SkillsSection = () => {
                       </span>
                     </div>
 
-                    <div className="relative w-full h-2.5 rounded-full bg-[rgba(0,255,255,0.1)] overflow-hidden">
+                    <div className="relative w-full h-2.5 rounded-full bg-gray-800/30 dark:bg-gray-900/50 overflow-visible">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="h-full rounded-full bg-gradient-to-r from-[#00d8ff] to-[#0077ff] group-hover:animate-pulse transition-all duration-300"
+                        className="h-full rounded-full bg-[#00bfff] group-hover:bg-[#00d8ff] transition-all duration-300"
                         style={{
-                          boxShadow: "0 0 10px rgba(0, 216, 255, 0.6), 0 0 20px rgba(0, 119, 255, 0.4), 0 0 30px rgba(0, 216, 255, 0.2)"
-                        }}
-                      />
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1.2, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                        className="absolute top-0 left-0 h-full rounded-full bg-gradient-to-r from-[#00d8ff] to-[#0077ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          boxShadow: "0 0 20px rgba(0, 216, 255, 0.9), 0 0 40px rgba(0, 119, 255, 0.7), 0 0 60px rgba(0, 216, 255, 0.5)"
+                          boxShadow: "0 0 8px rgba(0, 191, 255, 0.6), 0 0 16px rgba(0, 191, 255, 0.3), inset 0 0 4px rgba(255, 255, 255, 0.3)"
                         }}
                       />
                     </div>
