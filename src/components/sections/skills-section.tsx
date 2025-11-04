@@ -129,12 +129,12 @@ const SkillsSection = () => {
                         viewport={{ once: true }}
                         className="h-full rounded-full transition-all duration-500"
                         style={{
-                          background: 'linear-gradient(90deg, #00bfff 0%, #0077ff 100%)',
+                          background: '#00d4ff',
                           boxShadow: `
-                            0 0 10px rgba(0, 191, 255, 0.9),
-                            0 0 20px rgba(0, 191, 255, 0.6),
-                            0 0 30px rgba(0, 216, 255, 0.4),
-                            inset 0 1px 3px rgba(255, 255, 255, 0.5)
+                            0 0 12px rgba(0, 212, 255, 1),
+                            0 0 24px rgba(0, 212, 255, 0.7),
+                            0 0 36px rgba(0, 212, 255, 0.5),
+                            inset 0 1px 3px rgba(255, 255, 255, 0.6)
                           `,
                         }}
                       />
