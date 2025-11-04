@@ -2,12 +2,7 @@ import { motion } from "framer-motion";
 import { Bot, Cpu, Code, Cloud, LucideIcon } from "lucide-react";
 
 const SkillsSection = () => {
-  const skillCategories: {
-    title: string;
-    icon: LucideIcon;
-    color: string;
-    skills: { name: string; level: number }[];
-  }[] = [
+  const skillCategories = [
     {
       title: "AI & Automation",
       icon: Bot,
@@ -56,10 +51,7 @@ const SkillsSection = () => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   const itemVariants = {
@@ -68,10 +60,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section
-      id="skills"
-      className="py-20 bg-white dark:bg-black transition-colors duration-300"
-    >
+    <section id="skills" className="py-20 bg-white dark:bg-black transition-colors duration-300">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -80,7 +69,7 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">
             Skills & Expertise
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
@@ -96,47 +85,38 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="bg-white dark:bg-[#0a0a0a] rounded-xl p-6 shadow-lg dark:shadow-black hover:shadow-xl dark:hover:shadow-black transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-800"
+              className="bg-white dark:bg-[#0a0a0a] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-800"
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className={`${category.color} p-2 rounded-lg`}>
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-heading font-semibold text-xl text-gray-900 dark:text-white transition-colors duration-300">
+                <h3 className="font-heading font-semibold text-xl text-gray-900 dark:text-white">
                   {category.title}
                 </h3>
               </div>
 
               <div className="space-y-5">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2 group cursor-pointer">
+                  <div key={skillIndex} className="space-y-2 group">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[#00d8ff] transition-colors duration-300">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[#00d8ff] transition-colors">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-blue-500 dark:text-blue-400 group-hover:text-[#00d8ff] transition-colors duration-300">
+                      <span className="text-sm font-semibold text-blue-500 dark:text-blue-400 group-hover:text-[#00d8ff] transition-colors">
                         {skill.level}%
                       </span>
                     </div>
 
-                    {/* Progress Bar */}
-                    <div className="relative w-full h-2.5 rounded-full bg-[#001f3f]/60 dark:bg-[#001a33]/80 overflow-hidden backdrop-blur-sm">
+                    {/* Fixed Progress Bar */}
+                    <div className="relative w-full h-2.5 rounded-full bg-[#0a1a2f]/80 dark:bg-[#0a1a2f]/80 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="h-full rounded-full bg-[#00bfff] group-hover:bg-[#00d8ff] transition-all duration-500"
-                        style={{
-                          boxShadow: `
-                            0 0 6px rgba(0, 191, 255, 0.9),
-                            0 0 12px rgba(0, 191, 255, 0.8),
-                            0 0 24px rgba(0, 191, 255, 0.6),
-                            inset 0 0 6px rgba(255, 255, 255, 0.3)
-                          `,
-                          filter: "blur(0.3px)",
-                        }}
+                        className="h-full rounded-full bg-gradient-to-r from-[#00bfff] to-[#0077ff] shadow-[0_0_12px_#00bfff,0_0_20px_#00bfff] group-hover:shadow-[0_0_20px_#00d8ff,0_0_40px_#00d8ff] transition-all duration-500"
                       />
                     </div>
                   </div>
