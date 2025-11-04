@@ -121,21 +121,21 @@ const SkillsSection = () => {
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="relative w-full h-2.5 rounded-full bg-[#001f3f]/60 dark:bg-[#001a33]/80 overflow-hidden backdrop-blur-sm">
+                    <div className="relative w-full h-2.5 rounded-full overflow-hidden" style={{ backgroundColor: '#0a1a2f' }}>
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="h-full rounded-full bg-[#00bfff] group-hover:bg-[#00d8ff] transition-all duration-500"
+                        className="h-full rounded-full transition-all duration-500"
                         style={{
+                          background: 'linear-gradient(90deg, #00bfff 0%, #0077ff 100%)',
                           boxShadow: `
-                            0 0 6px rgba(0, 191, 255, 0.9),
-                            0 0 12px rgba(0, 191, 255, 0.8),
-                            0 0 24px rgba(0, 191, 255, 0.6),
-                            inset 0 0 6px rgba(255, 255, 255, 0.3)
+                            0 0 10px rgba(0, 191, 255, 0.9),
+                            0 0 20px rgba(0, 191, 255, 0.6),
+                            0 0 30px rgba(0, 216, 255, 0.4),
+                            inset 0 1px 3px rgba(255, 255, 255, 0.5)
                           `,
-                          filter: "blur(0.3px)",
                         }}
                       />
                     </div>
