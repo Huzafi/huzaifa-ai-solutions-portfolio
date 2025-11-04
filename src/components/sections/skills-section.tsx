@@ -120,15 +120,18 @@ const SkillsSection = () => {
                       </span>
                     </div>
 
-                    {/* ✅ Visible, animated neon progress bar */}
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1.2, ease: "easeOut" }}
-                      viewport={{ once: true }}
-                      className="h-2.5 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-700 shadow-[0_0_12px_rgba(0,191,255,0.8)]"
-                    />
-                    <div className="h-[2.5px] w-full bg-gray-200 dark:bg-gray-800 rounded-full absolute opacity-20"></div>
+                    <div className="relative w-full h-2.5 rounded-full bg-[rgba(0,255,255,0.1)] overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="h-full rounded-full bg-gradient-to-r from-[#00d8ff] to-[#0077ff]"
+                        style={{
+                          boxShadow: "0 0 10px rgba(0, 216, 255, 0.6), 0 0 20px rgba(0, 119, 255, 0.4), 0 0 30px rgba(0, 216, 255, 0.2)"
+                        }}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
