@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Button } from "../ui/button";
-import profileImage from "../../assets/huzaifa-new-profile.jpg";
+import profileImage from "../../assets/huzaifa-current-profile.png";
 
 interface HeroSectionProps {
   onSectionClick: (section: string) => void;
