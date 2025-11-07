@@ -115,7 +115,7 @@ const SkillsSection = () => {
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[#00d8ff] transition-colors duration-300">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-blue-500 dark:text-blue-400 group-hover:text-[#00d8ff] transition-colors duration-300">
+                      <span className="text-sm font-semibold transition-colors duration-300" style={{ color: '#00d4ff' }}>
                         {skill.level}%
                       </span>
                     </div>
