@@ -20,8 +20,8 @@ const Footer = ({ onSectionClick }: FooterProps) => {
   ];
 
   const contactInfo = [
-    { icon: Mail, text: "contact@huzaifasheikh.com", href: "mailto:contact@huzaifasheikh.com" },
-    { icon: Phone, text: "+1 (555) 123-4567", href: "tel:+15551234567" },
+    { icon: Mail, text: "contact@huzaifasheikh.com", href: "mailto:contact huzai567823@gmail.com" },
+    { icon: Phone, text: "+92 3482515273", href: "tel:+92 3420023413" },
     { icon: MapPin, text: "San Francisco, CA" },
   ];
 
