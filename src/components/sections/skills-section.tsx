@@ -127,7 +127,7 @@ const SkillsSection = () => {
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="h-full rounded-full transition-all duration-500"
+                        className="h-full rounded-full transition-all duration-500 relative overflow-hidden"
                         style={{
                           background: '#00d4ff',
                           boxShadow: `
@@ -137,7 +137,14 @@ const SkillsSection = () => {
                             inset 0 1px 3px rgba(255, 255, 255, 0.7)
                           `,
                         }}
-                      />
+                      >
+                        <div 
+                          className="absolute inset-0 w-1/3 animate-shimmer"
+                          style={{
+                            background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
+                          }}
+                        />
+                      </motion.div>
                     </div>
                   </div>
                 ))}
