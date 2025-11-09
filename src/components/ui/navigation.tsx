@@ -42,16 +42,21 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
 
-          {/* 💠 Logo */}
+          {/* 💠 Fixed Logo */}
           <motion.div
-            className="relative w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl 
-            text-white cursor-pointer shadow-medium"
+            className="relative w-14 h-14 flex items-center justify-center font-bold text-xl cursor-pointer shadow-medium 
+            text-white transition-transform duration-300"
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 300 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            <span className="relative z-10">HS</span>
+            {/* Solid Blue Circular Background */}
             <div className="absolute inset-0 rounded-full bg-[#2563eb]" />
+
+            {/* Subtle Blue Glow */}
             <div className="absolute inset-0 rounded-full bg-[#2563eb] opacity-40 blur-lg" />
+
+            {/* Logo Text */}
+            <span className="relative z-10 text-white">HS</span>
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
