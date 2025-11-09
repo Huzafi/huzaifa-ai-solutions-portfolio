@@ -107,7 +107,7 @@ const Footer = ({ onSectionClick }: FooterProps) => {
             <ul className="space-y-3">
               <li className="text-muted-foreground text-sm">Web Development</li>
               <li className="text-muted-foreground text-sm">AI Integration</li>
-              <li className="text-muted-foreground text-sm">Mobile Apps</li>
+              <li className="text-muted-foreground text-sm">AI AGENTS DEVELOPMENT</li>
               <li className="text-muted-foreground text-sm">Consulting</li>
             </ul>
           </div>
