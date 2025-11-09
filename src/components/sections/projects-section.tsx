@@ -111,7 +111,7 @@ const ProjectsSection = () => {
       details: "Intelligent chatbot solution for businesses to automate customer support, handle inquiries, and provide 24/7 assistance.",
       technologies: ["Python", "OpenAI", "Gemini API"],
       githubUrl: "https://github.com/Huzafi/AI_Chat_Assistant-Agent",
-      liveUrl: "https://agentbot.streamlit.app/",
+      liveUrl: "https://agentic-ai-bo.streamlit.app/",
     },
   ];
 
