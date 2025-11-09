@@ -15,8 +15,8 @@ const Footer = ({ onSectionClick }: FooterProps) => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/Huzafi", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/huzaifa-sheikh-b2a012342/", label: "LinkedIn" },
   ];
 
   const contactInfo = [
