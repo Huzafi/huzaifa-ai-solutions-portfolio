@@ -50,8 +50,8 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             transition={{ type: 'spring', stiffness: 300 }}
           >
             <span className="relative z-10">HS</span>
-            <div className="absolute inset-0 rounded-full bg-[#2563eb] opacity-90" />
-            <div className="absolute inset-0 rounded-full bg-[#2563eb] opacity-50 blur-md" />
+            <div className="absolute inset-0 rounded-full bg-[#2563eb]" />
+            <div className="absolute inset-0 rounded-full bg-[#2563eb] opacity-40 blur-lg" />
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
