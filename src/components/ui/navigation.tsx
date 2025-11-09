@@ -32,8 +32,8 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-gray-200 dark:border-white/10 shadow-sm"
-          : "bg-white/60 dark:bg-slate-950/60 backdrop-blur-lg"
+          ? "bg-card/80 backdrop-blur-xl border-b border-border shadow-soft"
+          : "bg-card/60 backdrop-blur-lg"
       }`}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
@@ -45,12 +45,12 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
           {/* 💠 Logo */}
           <motion.div
             className="relative w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl 
-            text-blue-600 dark:text-white cursor-pointer shadow-lg shadow-blue-500/30"
+            text-primary cursor-pointer shadow-medium"
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
             <span className="relative z-10">HS</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-50 blur-md" />
+            <div className="absolute inset-0 rounded-full gradient-hero opacity-50 blur-md" />
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
@@ -66,8 +66,8 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
                   onClick={() => onSectionClick(item.id)}
                   className={`transition-all duration-300 font-medium px-5 py-2 rounded-lg ${
                     activeSection === item.id
-                      ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/50"
-                      : "text-gray-900 hover:text-blue-600 hover:bg-blue-50 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10"
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-medium"
+                      : "text-foreground hover:text-primary hover:bg-accent"
                   }`}
                 >
                   {item.label}
@@ -85,7 +85,7 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-gray-900 hover:text-blue-600 hover:bg-blue-50 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/10"
+              className="text-foreground hover:text-primary hover:bg-accent"
             >
               <svg
                 className="w-6 h-6"

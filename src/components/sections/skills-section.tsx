@@ -70,7 +70,7 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-white dark:bg-black transition-colors duration-300"
+      className="py-20 bg-background"
     >
       <div className="container mx-auto px-6">
         <motion.div
@@ -80,10 +80,10 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
             Skills & Expertise
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 gradient-hero mx-auto rounded-full"></div>
         </motion.div>
 
         <motion.div
@@ -96,14 +96,14 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="bg-white dark:bg-[#0a0a0a] rounded-xl p-6 shadow-lg dark:shadow-black hover:shadow-xl dark:hover:shadow-black transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-800"
+              className="bg-card border border-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className={`${category.color} p-2 rounded-lg`}>
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-heading font-semibold text-xl text-gray-900 dark:text-white transition-colors duration-300">
+                <h3 className="font-heading font-semibold text-xl text-foreground">
                   {category.title}
                 </h3>
               </div>
@@ -112,16 +112,16 @@ const SkillsSection = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2 group cursor-pointer">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[#00d8ff] transition-colors duration-300">
+                      <span className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold transition-colors duration-300" style={{ color: '#00d4ff' }}>
+                      <span className="text-sm font-semibold text-primary">
                         {skill.level}%
                       </span>
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="relative w-full h-2.5 rounded-full overflow-hidden" style={{ backgroundColor: '#0a1a2f' }}>
+                    <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-muted">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -129,11 +129,11 @@ const SkillsSection = () => {
                         viewport={{ once: true }}
                         className="h-full rounded-full transition-all duration-500 relative overflow-hidden"
                         style={{
-                          background: '#00d4ff',
+                          background: 'hsl(var(--primary))',
                           boxShadow: `
-                            0 0 15px rgba(0, 212, 255, 0.8),
-                            0 0 25px rgba(0, 212, 255, 0.6),
-                            0 0 35px rgba(0, 212, 255, 0.4),
+                            0 0 15px hsl(var(--primary) / 0.8),
+                            0 0 25px hsl(var(--primary) / 0.6),
+                            0 0 35px hsl(var(--primary) / 0.4),
                             inset 0 1px 3px rgba(255, 255, 255, 0.7)
                           `,
                         }}

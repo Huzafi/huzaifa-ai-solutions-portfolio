@@ -49,6 +49,16 @@ main, section, div {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Light mode: clean neutral background */
+body {
+  background: hsl(var(--background)) !important;
+}
+
+/* Dark mode: gradient with background image */
+.dark body {
   background: 
     linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.85) 100%),
     url('/ai-portfolio-background.jpg') center / cover no-repeat fixed !important;
@@ -56,6 +66,4 @@ body {
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
-  color: white;
-  overflow-x: hidden;
 }
