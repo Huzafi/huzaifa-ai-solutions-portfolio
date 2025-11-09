@@ -45,12 +45,13 @@ const Navigation = ({ activeSection, onSectionClick }: NavigationProps) => {
           {/* 💠 Logo */}
           <motion.div
             className="relative w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl 
-            text-primary cursor-pointer shadow-medium"
+            text-white cursor-pointer shadow-medium"
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
             <span className="relative z-10">HS</span>
-            <div className="absolute inset-0 rounded-full gradient-hero opacity-50 blur-md" />
+            <div className="absolute inset-0 rounded-full bg-[#2563eb] opacity-90" />
+            <div className="absolute inset-0 rounded-full bg-[#2563eb] opacity-50 blur-md" />
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
