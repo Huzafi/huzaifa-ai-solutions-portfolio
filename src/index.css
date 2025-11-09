@@ -28,62 +28,62 @@
 
 @layer base {
   :root {
-    /* Base colors */
-    --background: 0 0% 100%;
-    --foreground: 210 11% 15%;
+    /* Base colors - soft off-white background with darker text */
+    --background: 210 20% 98%;
+    --foreground: 217 19% 12%;
 
-    /* Card system */
+    /* Card system - slightly elevated from background */
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 15%;
+    --card-foreground: 217 19% 12%;
 
     /* Interactive elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
+    --popover-foreground: 217 19% 12%;
 
-    /* Electric blue theme */
-    --primary: 214 100% 50%;
+    /* Electric blue theme - richer and more vibrant */
+    --primary: 214 95% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 214 100% 60%;
+    --primary-glow: 214 100% 55%;
     
-    /* Secondary tones */
-    --secondary: 214 25% 95%;
-    --secondary-foreground: 210 11% 15%;
+    /* Secondary tones - more contrast */
+    --secondary: 214 20% 92%;
+    --secondary-foreground: 217 19% 12%;
 
-    /* Muted elements */
-    --muted: 210 14% 96%;
-    --muted-foreground: 210 11% 46%;
+    /* Muted elements - better readability */
+    --muted: 210 16% 93%;
+    --muted-foreground: 217 10% 40%;
 
-    /* Accent highlights */
-    --accent: 214 25% 95%;
-    --accent-foreground: 210 11% 15%;
+    /* Accent highlights - more vibrant */
+    --accent: 214 20% 92%;
+    --accent-foreground: 217 19% 12%;
 
     /* System colors */
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs */
-    --border: 214 15% 91%;
-    --input: 214 15% 91%;
-    --ring: 214 100% 50%;
+    /* Borders and inputs - more defined */
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 214 95% 45%;
 
     --radius: 0.75rem;
 
     /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(214 100% 50%), hsl(214 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(214 100% 50%) 0%, hsl(214 100% 60%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(214 25% 98%) 100%);
-    --gradient-page: linear-gradient(180deg, hsl(210 100% 98%) 0%, hsl(214 100% 96%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(214 95% 45%), hsl(214 95% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 95% 45%) 0%, hsl(214 95% 55%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(214 20% 96%) 100%);
+    --gradient-page: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(214 20% 96%) 100%);
     
     /* AI Developer theme colors */
     --ai-deep-blue: 210 65% 12%;
     --ai-electric-blue: 211 100% 50%;
     --ai-purple-glow: 261 51% 51%;
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(214 50% 50% / 0.1);
-    --shadow-medium: 0 8px 30px -8px hsl(214 50% 50% / 0.15);
-    --shadow-strong: 0 16px 40px -12px hsl(214 50% 50% / 0.25);
-    --shadow-glow: 0 0 30px hsl(214 100% 60% / 0.3);
+    /* Shadows - more visible in light mode */
+    --shadow-soft: 0 2px 12px -2px hsl(214 30% 40% / 0.12);
+    --shadow-medium: 0 4px 20px -4px hsl(214 30% 35% / 0.16);
+    --shadow-strong: 0 8px 32px -8px hsl(214 30% 30% / 0.22);
+    --shadow-glow: 0 0 24px hsl(214 95% 50% / 0.25);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
