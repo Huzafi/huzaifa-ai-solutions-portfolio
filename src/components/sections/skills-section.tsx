@@ -121,13 +121,7 @@ const SkillsSection = () => {
                     </div>
 
                     {/* Progress Bar */}
-                    <div 
-                      className="relative w-full h-2.5 rounded-full overflow-hidden border"
-                      style={{
-                        background: 'hsl(var(--neon) / 0.2)',  // opacity slightly higher
-                        borderColor: 'hsl(var(--neon) / 0.4)',
-                      }}
-                    >
+                    <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-neon/15 border border-neon/30">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -137,17 +131,17 @@ const SkillsSection = () => {
                         style={{
                           background: 'hsl(var(--neon))',
                           boxShadow: `
-                            0 0 15px hsl(var(--neon) / 0.80),
-                            0 0 25px hsl(var(--neon) / 0.60),
-                            0 0 35px hsl(var(--neon) / 0.40),
-                            inset 0 1px 2px hsl(var(--neon) / 0.25)
+                            0 0 15px hsl(var(--neon) / 0.8),
+                            0 0 25px hsl(var(--neon) / 0.6),
+                            0 0 35px hsl(var(--neon) / 0.4),
+                            inset 0 1px 3px rgba(255, 255, 255, 0.7)
                           `,
                         }}
                       >
                         <div 
                           className="absolute inset-0 w-1/3 animate-shimmer"
                           style={{
-                            background: 'linear-gradient(90deg, transparent, hsl(var(--neon) / 0.35), transparent)',
+                            background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
                           }}
                         />
                       </motion.div>
