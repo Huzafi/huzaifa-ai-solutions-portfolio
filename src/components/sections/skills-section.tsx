@@ -11,7 +11,7 @@ const SkillsSection = () => {
     {
       title: "AI & Automation",
       icon: Bot,
-      color: "bg-blue-500",
+      color: "bg-neon-blue-500",
       skills: [
         { name: "OpenAI Agents SDK", level: 90 },
         { name: "LangGraph", level: 85 },
