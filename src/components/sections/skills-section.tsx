@@ -122,10 +122,10 @@ const SkillsSection = () => {
 
                     {/* Progress Bar */}
                     <div 
-                      className="relative w-full h-2.5 rounded-full overflow-hidden border" 
-                      style={{ 
-                        background: 'hsl(var(--foreground) / 0.12)', 
-                        borderColor: 'hsl(var(--neon) / 0.30)' 
+                      className="relative w-full h-2.5 rounded-full overflow-hidden border"
+                      style={{
+                        background: 'hsl(var(--neon) / 0.2)',  // opacity slightly higher
+                        borderColor: 'hsl(var(--neon) / 0.4)',
                       }}
                     >
                       <motion.div
