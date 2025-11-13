@@ -38,7 +38,7 @@ const Navigation = ({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return <motion.nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-card/80 backdrop-blur-xl border-b border-border shadow-soft" : "bg-card/60 backdrop-blur-lg"}`} initial={{
+  return <motion.nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white/10" initial={{
     opacity: 1,
     y: 0
   }} animate={{
@@ -47,7 +47,7 @@ const Navigation = ({
   }} transition={{
     duration: 0.5
   }}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
 
           {/* 💠 Logo */}
@@ -61,17 +61,20 @@ const Navigation = ({
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-2">
-            {navItems.map(item => <motion.div key={item.id} whileHover={{
-            scale: 1.05
-          }} transition={{
-            type: "spring",
-            stiffness: 300
-          }}>
-                <Button variant="ghost" onClick={() => onSectionClick(item.id)} className={`transition-all duration-300 font-medium px-5 py-2 rounded-lg ${activeSection === item.id ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-medium" : "text-foreground hover:text-primary hover:bg-accent"}`}>
-                  {item.label}
-                </Button>
-              </motion.div>)}
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map(item => (
+              <button
+                key={item.id}
+                onClick={() => onSectionClick(item.id)}
+                className={`transition-all duration-300 font-medium px-6 py-2 rounded-full ${
+                  activeSection === item.id 
+                    ? "bg-primary text-white" 
+                    : "text-white hover:text-primary"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
 
             {/* 🌓 Theme Toggle */}
             <ThemeToggle />
