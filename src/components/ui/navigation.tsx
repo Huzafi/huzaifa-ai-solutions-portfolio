@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./button";
 import { ThemeToggle } from "./theme-toggle";
+import logo from "@/assets/logo.png";
 interface NavigationProps {
   activeSection: string;
   onSectionClick: (section: string) => void;
@@ -49,22 +50,14 @@ const Navigation = ({
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
 
-          {/* 💠 Fixed Logo */}
-          <motion.div className="relative w-14 h-14 flex items-center justify-center font-bold text-xl cursor-pointer shadow-medium 
-            text-white transition-transform duration-300" whileHover={{
+          {/* 💠 Logo */}
+          <motion.div className="relative w-14 h-14 flex items-center justify-center cursor-pointer transition-transform duration-300" whileHover={{
           scale: 1.1
         }} transition={{
           type: "spring",
           stiffness: 300
         }}>
-            {/* Solid Blue Circular Background */}
-            <div className="absolute inset-0 rounded-full bg-[#2563eb]" />
-
-            {/* Subtle Blue Glow */}
-            <div className="absolute inset-0 rounded-full bg-[#2563eb] opacity-40 blur-lg" />
-
-            {/* Logo Text */}
-            <span className="relative z-10 text-base text-blue-800">HS</span>
+            <img src={logo} alt="HS Logo" className="w-full h-full object-contain" />
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
