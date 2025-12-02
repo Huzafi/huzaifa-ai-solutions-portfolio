@@ -52,8 +52,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // --- FIX IS HERE ---
-        **neon: { DEFAULT: "hsl(var(--neon) / <alpha-value>)" },** // --------------------
+        neon: { DEFAULT: "hsl(var(--neon))" },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

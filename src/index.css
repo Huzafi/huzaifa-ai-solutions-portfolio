@@ -391,73 +391,66 @@ body {
   }
 }
 
-html,
-body,
-#root {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  background-color: transparent !important;
-}
-/* Light mode: no background overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0;
-}
+@layer base {
+  html,
+  body,
+  #root {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
 
-/* Dark mode: gradient with background image */
-.dark body::before {
-  background: 
-    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.85) 100%),
-    url('/ai-portfolio-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  opacity: 1;
-}
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+  }
 
+  .dark body::before {
+    background: 
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.85) 100%),
+      url('/ai-portfolio-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 1;
+  }
 
-nav,
-header {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-}
+  nav,
+  header {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+  }
 
-nav::before,
-nav::after,
-header::before,
-header::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  border: none !important;
-}
+  nav::before,
+  nav::after,
+  header::before,
+  header::after {
+    content: none;
+    display: none;
+    background: none;
+    border: none;
+  }
 
-/* === Remove black top strip (navbar background) === */
-nav, header {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  position: relative;
-  z-index: 10;
-}
+  nav *,
+  header * {
+    background: transparent;
+  }
 
-nav * {
-  background: transparent !important;
-}
-
-header * {
-  background: transparent !important;
-}
-
-#root, main, section, div {
-  background: transparent !important;
+  #root,
+  main,
+  section,
+  div {
+    background: transparent;
+  }
 }
