@@ -166,8 +166,12 @@ const ProjectsSection = () => {
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              className="bg-card border border-border rounded-xl overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-2 group"
+              className="bg-card border border-border rounded-xl overflow-hidden shadow-soft transition-all duration-300 hover:-translate-y-2 group"
               variants={itemVariants}
+              whileHover={{ 
+                boxShadow: '0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.05)',
+                borderColor: 'rgba(0, 255, 255, 0.6)'
+              }}
             >
               <div className="p-6">
                 <div className="mb-4 h-16 flex items-center justify-center">
