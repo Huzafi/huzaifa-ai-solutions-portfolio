@@ -5,13 +5,11 @@ const SkillsSection = () => {
   const skillCategories: {
     title: string;
     icon: LucideIcon;
-    color: string;
     skills: { name: string; level: number }[];
   }[] = [
     {
       title: "AI & Automation",
       icon: Bot,
-      color: "bg-neon-blue-500",
       skills: [
         { name: "OpenAI Agents SDK", level: 90 },
         { name: "LangGraph", level: 85 },
@@ -22,7 +20,6 @@ const SkillsSection = () => {
     {
       title: "Programming",
       icon: Code,
-      color: "bg-green-500",
       skills: [
         { name: "Python", level: 95 },
         { name: "Node.js", level: 88 },
@@ -33,7 +30,6 @@ const SkillsSection = () => {
     {
       title: "Web Technologies",
       icon: Cloud,
-      color: "bg-orange-500",
       skills: [
         { name: "FastAPI", level: 90 },
         { name: "Streamlit/Chainlit", level: 85 },
@@ -44,7 +40,6 @@ const SkillsSection = () => {
     {
       title: "Integrations",
       icon: Cpu,
-      color: "bg-purple-500",
       skills: [
         { name: "Github Agent API", level: 90 },
         { name: "LinkedIn API", level: 85 },
@@ -70,9 +65,18 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-background"
+      className="py-20 bg-[#0a1628] relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      {/* Subtle grid/particle background effect */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                           radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                           radial-gradient(circle at 40% 20%, rgba(0, 212, 255, 0.05) 0%, transparent 50%)`
+        }} />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -80,10 +84,17 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4"
+              style={{
+                textShadow: '0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.3)'
+              }}>
             Skills & Expertise
           </h2>
-          <div className="w-20 h-1 gradient-hero mx-auto rounded-full"></div>
+          <div className="w-20 h-1 mx-auto rounded-full"
+               style={{
+                 background: 'linear-gradient(90deg, #00d4ff, #0099cc)',
+                 boxShadow: '0 0 15px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 212, 255, 0.5)'
+               }} />
         </motion.div>
 
         <motion.div
@@ -96,55 +107,68 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="bg-card border border-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
+              className="rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: 'rgba(15, 30, 50, 0.6)',
+                border: '1px solid rgba(0, 212, 255, 0.15)',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
+              }}
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className={`${category.color} p-2 rounded-lg`}>
-                  <category.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="font-heading font-semibold text-xl text-foreground">
+                <category.icon 
+                  className="w-6 h-6"
+                  style={{
+                    color: '#00d4ff',
+                    filter: 'drop-shadow(0 0 8px rgba(0, 212, 255, 0.8))'
+                  }}
+                />
+                <h3 className="font-heading font-semibold text-xl text-white">
                   {category.title}
                 </h3>
               </div>
 
               <div className="space-y-5">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2 group cursor-pointer">
+                  <div key={skillIndex} className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300">
+                      <span className="text-sm font-medium text-gray-400">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-neon">
+                      <span 
+                        className="text-sm font-semibold"
+                        style={{
+                          color: '#00d4ff',
+                          textShadow: '0 0 10px rgba(0, 212, 255, 0.8)'
+                        }}
+                      >
                         {skill.level}%
                       </span>
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="relative w-full h-2.5 rounded-full overflow-hidden bg-neon/15 border border-neon/30">
+                    <div 
+                      className="relative w-full h-2 rounded-full overflow-hidden"
+                      style={{
+                        background: 'rgba(0, 212, 255, 0.1)',
+                        border: '1px solid rgba(0, 212, 255, 0.2)'
+                      }}
+                    >
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="h-full rounded-full transition-all duration-500 relative overflow-hidden"
+                        className="h-full rounded-full"
                         style={{
-                          background: 'hsl(var(--neon))',
+                          background: 'linear-gradient(90deg, #00d4ff 0%, #00a8cc 100%)',
                           boxShadow: `
-                            0 0 15px hsl(var(--neon) / 0.8),
-                            0 0 25px hsl(var(--neon) / 0.6),
-                            0 0 35px hsl(var(--neon) / 0.4),
-                            inset 0 1px 3px rgba(255, 255, 255, 0.7)
-                          `,
+                            0 0 10px rgba(0, 212, 255, 0.9),
+                            0 0 20px rgba(0, 212, 255, 0.6),
+                            0 0 30px rgba(0, 212, 255, 0.4)
+                          `
                         }}
-                      >
-                        <div 
-                          className="absolute inset-0 w-1/3 animate-shimmer"
-                          style={{
-                            background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent)',
-                          }}
-                        />
-                      </motion.div>
+                      />
                     </div>
                   </div>
                 ))}
