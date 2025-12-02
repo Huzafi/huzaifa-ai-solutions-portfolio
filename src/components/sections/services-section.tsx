@@ -89,9 +89,16 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-card border border-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-2 group cursor-pointer"
+              className="bg-card border border-border rounded-xl p-6 shadow-soft transition-all duration-300 hover:-translate-y-2 group cursor-pointer"
+              style={{
+                transition: 'all 0.3s ease'
+              }}
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: '0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.05)',
+                borderColor: 'rgba(0, 255, 255, 0.6)'
+              }}
             >
               <div className="mb-4">
                 {/* 🔥 Blue glow icon */}
