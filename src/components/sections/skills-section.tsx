@@ -104,7 +104,7 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 bg-card border border-border"
+              className="rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 bg-card border border-border hover:shadow-[0_0_20px_rgba(0,255,255,0.3),0_0_40px_rgba(0,255,255,0.1)] hover:border-[rgba(0,255,255,0.6)]"
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-6">
