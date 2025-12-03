@@ -51,13 +51,13 @@ const Navigation = ({
         <div className="flex items-center justify-between">
 
           {/* 💠 Logo */}
-          <motion.div className="relative w-14 h-14 flex items-center justify-center cursor-pointer transition-transform duration-300" whileHover={{
+          <motion.div className="relative w-14 h-14 flex items-center justify-center cursor-pointer transition-transform duration-300 rounded-full bg-card border border-border" whileHover={{
           scale: 1.1
         }} transition={{
           type: "spring",
           stiffness: 300
         }}>
-            <img src={logo} alt="HS Logo" className="w-full h-full object-contain" />
+            <img src={logo} alt="HS Logo" className="w-full h-full object-contain rounded-full" />
           </motion.div>
 
           {/* 🖥 Desktop Menu */}
