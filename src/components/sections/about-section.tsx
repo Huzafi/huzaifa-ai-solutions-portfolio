@@ -43,7 +43,7 @@ const AboutSection = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Bio Section */}
           <motion.div
-            className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-500"
+            className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-soft hover:shadow-[0_0_20px_rgba(0,255,255,0.3),0_0_40px_rgba(0,255,255,0.1)] hover:border-[rgba(0,255,255,0.6)] transition-all duration-500"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
@@ -111,7 +111,7 @@ const AboutSection = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
                 >
-                  <div className="bg-card border border-border rounded-lg p-4 shadow-soft hover:shadow-medium transition-all duration-300">
+                  <div className="bg-card border border-border rounded-lg p-4 shadow-soft hover:shadow-[0_0_20px_rgba(0,255,255,0.3),0_0_40px_rgba(0,255,255,0.1)] hover:border-[rgba(0,255,255,0.6)] transition-all duration-300">
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-heading font-semibold text-primary">
                         {edu.year}
