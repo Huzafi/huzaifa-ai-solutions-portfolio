@@ -69,10 +69,10 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="py-20 bg-[#000000] relative overflow-hidden"
+      className="py-20 bg-background relative overflow-hidden"
     >
-      {/* Subtle grid/particle background effect */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Subtle grid/particle background effect - only visible in dark mode */}
+      <div className="absolute inset-0 opacity-20 dark:opacity-20 opacity-0">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
                            radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
@@ -88,17 +88,10 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4"
-              style={{
-                textShadow: '0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.3)'
-              }}>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
             Skills & Expertise
           </h2>
-          <div className="w-20 h-1 mx-auto rounded-full"
-               style={{
-                 background: 'linear-gradient(90deg, #00d4ff, #0099cc)',
-                 boxShadow: '0 0 15px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 212, 255, 0.5)'
-               }} />
+          <div className="w-20 h-1 mx-auto rounded-full gradient-hero" />
         </motion.div>
 
         <motion.div
@@ -111,23 +104,14 @@ const SkillsSection = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              className="rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
-              style={{
-                background: 'rgba(15, 30, 50, 0.6)',
-                border: '1px solid rgba(0, 212, 255, 0.15)',
-                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)'
-              }}
+              className="rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 bg-card border border-border"
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-6">
                 <category.icon 
-                  className="w-6 h-6"
-                  style={{
-                    color: '#00d4ff',
-                    filter: 'drop-shadow(0 0 8px rgba(0, 212, 255, 0.8))'
-                  }}
+                  className="w-6 h-6 text-primary"
                 />
-                <h3 className="font-heading font-semibold text-xl text-white">
+                <h3 className="font-heading font-semibold text-xl text-foreground">
                   {category.title}
                 </h3>
               </div>
@@ -136,42 +120,22 @@ const SkillsSection = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-400">
+                      <span className="text-sm font-medium text-muted-foreground">
                         {skill.name}
                       </span>
-                      <span 
-                        className="text-sm font-semibold"
-                        style={{
-                          color: '#00d4ff',
-                          textShadow: '0 0 10px rgba(0, 212, 255, 0.8)'
-                        }}
-                      >
+                      <span className="text-sm font-semibold text-primary">
                         {skill.level}%
                       </span>
                     </div>
 
                     {/* Progress Bar */}
-                    <div 
-                      className="relative w-full h-2 rounded-full overflow-hidden"
-                      style={{
-                        background: 'rgba(0, 212, 255, 0.1)',
-                        border: '1px solid rgba(0, 212, 255, 0.2)'
-                      }}
-                    >
+                    <div className="relative w-full h-2 rounded-full overflow-hidden bg-muted">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="h-full rounded-full"
-                        style={{
-                          background: 'linear-gradient(90deg, #00d4ff 0%, #00a8cc 100%)',
-                          boxShadow: `
-                            0 0 10px rgba(0, 212, 255, 0.9),
-                            0 0 20px rgba(0, 212, 255, 0.6),
-                            0 0 30px rgba(0, 212, 255, 0.4)
-                          `
-                        }}
+                        className="h-full rounded-full bg-primary"
                       />
                     </div>
                   </div>
