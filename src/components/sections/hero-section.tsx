@@ -9,7 +9,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
   return (
-    <section id="home" className="min-h-screen flex items-center bg-[#000000]">
+    <section id="home" className="min-h-screen flex items-center bg-background">
       <div className="container mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Profile Image */}
