@@ -137,7 +137,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-[#000000]">
+    <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
