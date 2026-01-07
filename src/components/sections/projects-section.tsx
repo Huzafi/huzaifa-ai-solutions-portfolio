@@ -113,6 +113,16 @@ const ProjectsSection = () => {
       githubUrl: "https://github.com/Huzafi/AI_Chat_Assistant-Agent",
       liveUrl: "https://agentic-ai-bo.streamlit.app/",
     },
+    {
+      id: 11,
+      title: "AI Native Book",
+      description: "AI Native Book Of Physical AI & Humanoids",
+      image: "📘",
+      details: "An AI-Native Book platform combining Docusaurus frontend, SpecKit Plus for structured development and using ClaudeCode for developemnt, and a RAG-powered chatbot delivering context-aware answers from the book content.",
+      technologies: ["Docusarus", "ClaudeCode", "Speckit"],
+      githubUrl: "https://github.com/Huzafi/AI-Native-Physical-Book/tree/001-ai-book-docusaurus",
+      liveUrl: "https://ai-native-book-green.vercel.app/",
+    },
   ];
 
   const containerVariants = {
