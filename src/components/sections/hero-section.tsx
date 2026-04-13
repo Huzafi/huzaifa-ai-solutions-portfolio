@@ -95,7 +95,7 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
                 onClick={() => onSectionClick("contact")}
                 className="shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105"
               >
-                Contact Me
+                Hire Me
               </Button>
             </motion.div>
           </motion.div>
