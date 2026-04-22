@@ -31,7 +31,7 @@ const ProjectsSection = () => {
       details: "A conversational agent built with the OpenAI Agents SDK and GitHub API that allows users to create, list, and delete repositories directly through chat. It eliminates manual steps by automating GitHub tasks seamlessly.",
       technologies: ["Python", "OpenAI Agents SDK", "GitHub API", "FastAPI"],
       githubUrl: "https://github.com/Huzafi/Github_Agent",
-      liveUrl: "https://drive.google.com/file/d/1yZfa4-5nrKcs1ANdk2ymxAChL75a5vzR/view",
+      liveUrl: "https://drive.google.com/file/d/1Ecq3OjSLNJpeU0ZZ5vym8VlWLNddYnVI/view",
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
       details: "Automation tool for LinkedIn that helps with connection requests, messaging, and profile optimization while maintaining authenticity.",
       technologies: ["n8n", "LinkedIn API", "Automation workfow"],
       githubUrl: "https://github.com/Huzafi/n8n_Automation_Projects/tree/main/01-LinkedIn-Automation",
-      liveUrl: "https://drive.google.com/file/d/1i7Cbp57p2CKFkMOP4JV2BKEzoFxxLQsV/view",
+      liveUrl: "https://drive.google.com/file/d/18WcuY6IO2oIkjmg9iKviYzB5MMN8pHs6/view",
     },
     {
       id: 5,
@@ -71,7 +71,7 @@ const ProjectsSection = () => {
       details: "AI-powered email assistant that categorizes emails, generates responses, and automates routine email tasks to boost productivity.",
       technologies: ["n8n", "Gmail API", "OpenAI"],
       githubUrl: "https://github.com/Huzafi/n8n_Automation_Projects/tree/main/03-Gmail-Agent",
-      liveUrl: "https://drive.google.com/file/d/1iEnx7u2yrzS0kyNhnZy2_pa_Pb2F46JW/view",
+      liveUrl: "https://drive.google.com/file/d/1Y6uHz5hjl05PyOoRhXlYZctQLxjMj-YW/view",
     },
     {
       id: 7,
