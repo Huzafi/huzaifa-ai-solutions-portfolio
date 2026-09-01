@@ -76,7 +76,7 @@ const AboutSection = () => {
                 asChild
               >
                 <a 
-                  href="https://drive.google.com/uc?export=download&id=1cEbGB5zrJi6Qp69iRYA2BB6OOCeghAha"
+                  href="https://drive.google.com/uc?export=download&id=1JZi46edKC9bNRRKlAFYwObPhQsJsFq-7"
                   target="_blank"
                   rel="noopener noreferrer"
                   download
