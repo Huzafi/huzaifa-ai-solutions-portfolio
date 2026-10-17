@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
 
-## Project info
+# Huzaifa Sheikh — AI & Automation Developer
 
-**URL**: https://lovable.dev/projects/6fa73495-69a6-4729-8ab2-97a38a3a4fc5
+I build intelligent AI agents, automation workflows, and backend solutions that help simplify real-world processes.
 
-## How can I edit this code?
+**[🌐 Visit My Portfolio](https://huzaifa-ai-solutions.vercel.app/)** · **[💼 LinkedIn](https://www.linkedin.com/in/huzaifa-sheikh-b2a012342/)** · **[🐙 GitHub](https://github.com/Huzafi)**
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 👋 About Me
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6fa73495-69a6-4729-8ab2-97a38a3a4fc5) and start prompting.
+I'm Huzaifa Sheikh, an aspiring AI & Automation Developer focused on building practical solutions with Python, AI agents, APIs, and workflow automation.
 
-Changes made via Lovable will be committed automatically to this repo.
+My interests include agentic AI systems, LLM-powered applications, backend development, and integrating tools to automate repetitive tasks.
 
-**Use your preferred IDE**
+- 🤖 Focused on AI agents and intelligent automation
+- 🐍 Working with Python and backend technologies
+- 🔗 Exploring API integrations, workflow automation, and LLM applications
+- 🚀 Building projects that solve practical problems
+- 📚 Continuously learning and improving my engineering skills
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠️ Technical Skills
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Languages & Backend**
+- Python
+- FastAPI
+- JavaScript / TypeScript
 
-Follow these steps:
+**AI & Automation**
+- OpenAI APIs and Agents SDK
+- LLM-powered applications
+- n8n workflow automation
+- Prompt and context engineering
+- API and webhook integrations
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
+**Tools & Technologies**
+- Git and GitHub
 - React
-- shadcn-ui
+- Vite
 - Tailwind CSS
+- REST APIs
 
-## How can I deploy this project?
+## 🚀 Featured Work
 
-Simply open [Lovable](https://lovable.dev/projects/6fa73495-69a6-4729-8ab2-97a38a3a4fc5) and click on Share -> Publish.
+### Personal Portfolio
 
-## Can I connect a custom domain to my Lovable project?
+My personal portfolio showcasing my background, technical interests, and development work.
 
-Yes, you can!
+- **Live Website:** [huzaifa-ai-solutions.vercel.app](https://huzaifa-ai-solutions.vercel.app/)
+- **Source Code:** [huzaifa-ai-solutions](https://github.com/Huzafi/huzaifa-ai-solutions-portfolio)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### AI Agents & Workflow Automation
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+I explore AI-powered assistants, tool integrations, and automation workflows designed to reduce repetitive work and improve operational efficiency.
+
+Check my GitHub repositories for available implementations and project documentation.
+
+## 🎯 Career Goals
+
+My goal is to become an AI Agent Developer specializing in agentic systems, backend engineering, and practical business automation.
+
+I'm particularly interested in building reliable AI solutions that connect language models, APIs, business data, and real-world workflows.
+
+## 🤝 Connect With Me
+
+- **Portfolio:** [huzaifa-ai-solutions.vercel.app](https://huzaifa-ai-solutions.vercel.app/)
+- **LinkedIn:** [Huzaifa Sheikh](https://www.linkedin.com/in/huzaifa-sheikh-b2a012342/)
+- **GitHub:** [Huzafi](https://github.com/Huzafi)
+
+---
+
+*Building practical AI solutions, one project at a time.*
